@@ -3,6 +3,18 @@
   "default_agent": "frontend",
   "share": "disabled",
   "instructions": ["DESIGN.md"],
+  "mcp": {
+    "servers": {
+      "stitch": {
+        "type": "remote",
+        "url": "https://stitch.googleapis.com/mcp",
+        "oauth": false,
+        "headers": {
+          "X-Goog-Api-Key": "{env:STITCH_API_KEY}"
+        }
+      }
+    }
+  },
   "agents": {
     "frontend": {
       "description": "UI/UX and frontend engineer. Builds screens and components strictly from DESIGN.md.",
@@ -142,7 +154,8 @@
         { "action": "shell", "resource": "rm -rf *", "effect": "deny" },
         { "action": "shell", "resource": "git push *", "effect": "deny" },
         { "action": "shell", "resource": "git reset --hard *", "effect": "deny" },
-        { "action": "shell", "resource": "git clean *", "effect": "deny" }
+        { "action": "shell", "resource": "git clean *", "effect": "deny" },
+        { "action": "stitch_*", "resource": "*", "effect": "deny" }
       ]
     }
   }
