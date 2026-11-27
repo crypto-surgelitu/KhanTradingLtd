@@ -36,3 +36,7 @@ Mobile first. Verify at 360, 390, 768, 1024, 1280 and 1440px. No horizontal page
 Read AGENTS.md Sections 2, 4, 6, 7, 9, 10, 11, 13 and 16 before coding. Validate every boundary with Zod; no `any`; no hard-coded business data. Do not call Supabase from components; use the feature `queries.ts` and `actions.ts` contracts. Run `pnpm lint`, `pnpm typecheck`, `pnpm test` and `pnpm build` where they exist, and report the real output. Never claim success without running the check.
 
 End every task with the SUMMARY format in AGENTS.md Section 16.
+
+## Session log
+
+At the end of every session, after the SUMMARY, add one entry to the **Frontend Agent Edits** section of `Edits.md` at the repository root: `### Session: [YYYY-MM-DD HH:MM]` followed by **Task**, **Changes**, **Reason**, **Status** (`Completed | Partial | Blocked`) and **Next Session** lines. Insert it directly below the section heading, newest first. Leave the bracketed template entry at the bottom of the section unchanged. Never read or write the Backend Agent Edits section, and never change the file's headings.

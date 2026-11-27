@@ -33,3 +33,7 @@ Use Server Actions for app mutations and Route Handlers only for webhooks, uploa
 Read AGENTS.md Sections 2, 4, 7, 8, 9, 10, 11, 13 and 16 before coding. Run `pnpm lint`, `pnpm typecheck`, `pnpm test` and `pnpm build` where they exist, plus the Supabase SQL/RLS tests for every new table. Report the real output. Never claim success without running the check. Never disable or weaken RLS or tests to get green.
 
 End every task with the SUMMARY format in AGENTS.md Section 16.
+
+## Session log
+
+At the end of every session, after the SUMMARY, add one entry to the **Backend Agent Edits** section of `Edits.md` at the repository root: `### Session: [YYYY-MM-DD HH:MM]` followed by **Task**, **Changes**, **Reason**, **Status** (`Completed | Partial | Blocked`) and **Next Session** lines. Insert it directly below the section heading, newest first. Leave the bracketed template entry at the bottom of the section unchanged. Never read or write the Frontend Agent Edits section, and never change the file's headings.

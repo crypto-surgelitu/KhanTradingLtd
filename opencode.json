@@ -19,10 +19,11 @@
     "frontend": {
       "description": "UI/UX and frontend engineer. Builds screens and components strictly from DESIGN.md.",
       "mode": "primary",
-      "model": "opencode/mimo-v2.6-flash-free",
+      "model": "opencode/mimo-v2.6-pro",
       "system": "{file:.opencode/prompts/frontend.md}",
-      "permissions": [
-        { "action": "edit", "resource": "*", "effect": "deny" },
+      "permissions": [  
+      
+     {"action": "edit", "resource": "*", "effect": "deny" },
         { "action": "edit", "resource": "src/app/*page.tsx", "effect": "allow" },
         { "action": "edit", "resource": "src/app/*layout.tsx", "effect": "allow" },
         { "action": "edit", "resource": "src/app/*loading.tsx", "effect": "allow" },
@@ -52,6 +53,8 @@
         { "action": "edit", "resource": "docs/DATABASE.md", "effect": "deny" },
         { "action": "edit", "resource": "docs/API.md", "effect": "deny" },
         { "action": "edit", "resource": "*.env*", "effect": "deny" },
+        { "action": "edit", "resource": "Edits.md", "effect": "allow" },
+        { "action": "edit", "resource": ".opencode/prompts/*", "effect": "allow" },
         { "action": "shell", "resource": "*", "effect": "ask" },
         { "action": "shell", "resource": "pnpm lint *", "effect": "allow" },
         { "action": "shell", "resource": "pnpm run lint *", "effect": "allow" },
@@ -90,9 +93,10 @@
     "backend": {
       "description": "Backend and database engineer. Owns schema, RLS, auth, storage, server actions, queries and API routes.",
       "mode": "primary",
-      "model": "opencode/deepseek-v4.1-flash-free",
+      "model":"opencode/deepseek-v4-pro",
       "system": "{file:.opencode/prompts/backend.md}",
-      "permissions": [
+      "permissions": [ 
+
         { "action": "edit", "resource": "*", "effect": "deny" },
         { "action": "edit", "resource": "supabase/*", "effect": "allow" },
         { "action": "edit", "resource": "src/server/*", "effect": "allow" },
@@ -123,6 +127,8 @@
         { "action": "edit", "resource": "src/config/*", "effect": "deny" },
         { "action": "edit", "resource": "tests/*", "effect": "deny" },
         { "action": "edit", "resource": "*.env*", "effect": "deny" },
+        { "action": "edit", "resource": "Edits.md", "effect": "allow" },
+        { "action": "edit", "resource": ".opencode/prompts/*", "effect": "allow" },
         { "action": "shell", "resource": "*", "effect": "ask" },
         { "action": "shell", "resource": "pnpm lint *", "effect": "allow" },
         { "action": "shell", "resource": "pnpm run lint *", "effect": "allow" },
