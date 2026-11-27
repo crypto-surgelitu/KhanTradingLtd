@@ -6,6 +6,13 @@ Session documentation for both agents. Each agent ONLY reads and writes to its o
 
 ## Frontend Agent Edits
 
+### Session: 2026-11-27 12:45
+- **Task:** Phase 0 scaffold, Chunk 3 of 4 — create source files (contents supplied verbatim by owner).
+- **Changes:** Created `src/lib/env.ts` (Zod env validation), `src/lib/utils.ts` (`cn` helper), `src/config/site.ts` (placeholder business details per AGENTS.md Section 6), `src/app/globals.css`, `src/app/layout.tsx` (Jost/Inter via next/font), `src/app/not-found.tsx`, `src/app/sitemap.ts`, `src/app/robots.ts`. Overwrote `.env.example` with owner's exact version (note: uses `BREVO_API_KEY`, diverging from INTEGRATIONS.md Section 5/12 `RESEND_API_KEY` — flagged for owner). 4 files via edit tool (allowlisted); 5 via one ask-gated shell batch.
+- **Reason:** Owner task "Phase 0 Scaffold (Chunk 3 of 4)". Fonts per DESIGN.md Section 3.2/12; placeholders per DESIGN.md Section 0.6/AGENTS.md Section 6.
+- **Status:** Completed
+- **Next Session:** Phase 0 Chunk 4 per owner instruction. Outstanding: verification (install/lint/typecheck/test/build — deferred by owner), BREVO-vs-Resend discrepancy in docs, Chunk 1 leftover (paste AGENTS.md session-log proposal from `docs/DECISIONS.md`).
+
 ### Session: 2026-11-27 12:37
 - **Task:** Phase 0 scaffold, Chunk 2 of 4 — create configuration files (contents supplied verbatim by owner).
 - **Changes:** Created `package.json`, `tsconfig.json`, `next.config.mjs`, `tailwind.config.ts`, `postcss.config.mjs`, `.eslintrc.json`, `.prettierrc`, `.gitignore` at repository root. 7 of 8 written via one ask-gated shell batch (Shared files outside the edit allowlist); owner deferred verification to a later chunk.
