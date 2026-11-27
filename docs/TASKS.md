@@ -4,6 +4,20 @@ Handoffs between agents follow AGENTS.md Section 11 formats. Newest entries firs
 
 ---
 
+NEEDS-BACKEND: Vehicle create/update action + photo upload
+Screen / component: `src/app/(admin)/admin/add-vehicle/page.tsx` + `src/features/admin/components/add-vehicle-form.tsx` (DESIGN.md Section 8 Admin Screen D)
+Data needed: none read; vehicle create/update payload = the form fields (make, model, trim, year, body type, price / price-on-request / negotiable, mileage, transmission, fuel, engine cc, drivetrain, colour, seats, doors, listing status, featured, new-arrival, photos[], overview text, features[])
+Actions needed: `createVehicle(input)` / `updateVehicle(id, input)` in `features/vehicles/actions.ts` (Zod schema in `schemas.ts`), photo upload endpoint with server-side type/size/signature validation (AGENTS.md Section 8), draft save, publish; real field validation (the Asking Price error and the "248 characters" counter are the designed preview states)
+Permissions: owner, manager, sales (role matrix, DESIGN.md Section 7.4)
+Until ready: form is a presentational client leaf with a `TODO(KHANS TRADING Ltd / backend)` comment at the submit boundary; the demo gallery/upload progress is the export's designed SAMPLE state
+
+NEEDS-BACKEND: Inventory list query + mutations (bulk actions, feature toggle, delete, CSV export)
+Screen / component: `src/app/(admin)/admin/inventory/page.tsx` + `src/features/admin/components/inventory-*` (DESIGN.md Section 8 Admin Screen C)
+Data needed: paginated inventory rows (the `InventoryRow` shape in `src/features/admin/mocks.ts`) with search/status/make/sort/page_size filters and the summary counts
+Actions needed: `markVehiclesSold(ids)`, `setVehiclesFeatured(ids, featured)`, `deleteVehicle(id)` (soft-delete rules per AGENTS.md Section 8), `exportInventoryCsv(filters)`; row actions menu (Edit, Mark as sold, Duplicate, Delete) behind `requireRole`
+Permissions: owner, manager, sales (delete restricted per role matrix, DESIGN.md Section 7.4)
+Until ready: labelled SAMPLE rows/counts in `src/features/admin/mocks.ts`; table form and bulk bar are presentational with TODO comments (the deletion dialog is a working UI leaf in `inventory-delete-dialog.tsx`)
+
 NEEDS-BACKEND: Admin dashboard data queries
 Screen / component: `src/app/(admin)/admin/dashboard/page.tsx` + `src/features/admin/components/*` + `src/components/layout/admin-shell.tsx` (DESIGN.md Section 8 Admin Screen B)
 Data needed: stat totals (vehicles, in stock, reserved, sold-this-month + gross volume), recent enquiries rows (customer, vehicle, timeline, note, status, suggested action), recently added vehicles, today's viewings agenda, arriving-soon shipments — exact shapes exported from `src/features/admin/mocks.ts`

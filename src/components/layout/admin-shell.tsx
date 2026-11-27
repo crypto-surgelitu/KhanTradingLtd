@@ -46,8 +46,8 @@ const navGroups = [
   {
     label: "Stock",
     items: [
-      { href: "/admin/vehicles", label: "Inventory", icon: Car },
-      { href: "/admin/vehicles/new", label: "Add Vehicle", icon: PlusCircle },
+      { href: "/admin/inventory", label: "Inventory", icon: Car },
+      { href: "/admin/add-vehicle", label: "Add Vehicle", icon: PlusCircle },
       { href: "/admin/shipments", label: "Shipments", icon: Truck },
       { href: "/admin/costing", label: "Costing", icon: Receipt },
     ],
@@ -166,7 +166,7 @@ export function AdminShell({ children, current }: AdminShellProps) {
               <Bell aria-hidden="true" className="size-5" strokeWidth={1.5} />
             </button>
             <Link
-              href="/admin/vehicles/new"
+              href="/admin/add-vehicle"
               className={buttonVariants({ variant: "primary" })}
             >
               <Plus aria-hidden="true" className="mr-2 size-5" strokeWidth={1.5} />

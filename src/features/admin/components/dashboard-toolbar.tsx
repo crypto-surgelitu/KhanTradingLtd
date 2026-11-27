@@ -52,7 +52,7 @@ export function DashboardToolbar() {
           New deal
         </Link>
         <Link
-          href="/admin/vehicles/new"
+          href="/admin/add-vehicle"
           className={buttonVariants({ variant: "primary" })}
         >
           <PlusCircle aria-hidden="true" className="mr-2 size-5" strokeWidth={1.5} />

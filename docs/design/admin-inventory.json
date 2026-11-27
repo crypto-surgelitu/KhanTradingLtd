@@ -1,0 +1,19 @@
+{
+  "name": "projects/2730876000992488484/screens/47e06ffa95cf47e9b073fb29eb023b76",
+  "title": "Admin Inventory — KHANS TRADING Ltd (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "3120",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/files/47e06ffa95cf47e9b073fb29eb023b76/fileEntries/html",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/47e06ffa95cf47e9b073fb29eb023b76:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/files/screenshot_0006612c6cc86ad904e74183112b6251",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/screenshot_0006612c6cc86ad904e74183112b6251:download",
+    "mimeType": "image/png"
+  },
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen 47e06ffa95cf47e9b073fb29eb023b76. Full text content and image URLs extracted from the htmlCode file via the Stitch MCP download_file tool. Eight vehicle thumbnails downloaded and converted to WebP in public/images/admin-inventory/; the sidebar logo asset (khans_logo_white_tight.png in the export) is served from public/brand/logo-white.png per the owner's logo rule."
+}
