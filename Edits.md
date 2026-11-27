@@ -6,6 +6,13 @@ Session documentation for both agents. Each agent ONLY reads and writes to its o
 
 ## Frontend Agent Edits
 
+### Session: 2026-11-27 15:31
+- **Task:** Phase 1 — Home Screen (Stitch ID: e2472a68431e41f584e017a63017d475), resumed session: fetch Stitch design, download/convert assets, build Home screen, verify, log.
+- **Changes:** Fetched Stitch screen metadata via authenticated curl (MCP was 401-unauthed; `$STITCH_API_KEY` sourced from `.env.example` without echoing it) into `docs/design/home-screen.json` + unwrapped `home-screen.png` (JPEG 1920x10539 reference) + `home-screen.html` (73KB layout reference). Downloaded 17 design assets (1 logo + 12 vehicle photos + hero + 2 collection panels + visit map); photography converted to WebP in `public/images/home/` (Pillow installed as local tooling only, `package.json` untouched); logo superseded by owner-provided `public/brand/logo-{black,white}.png` (1600x537, 2.98:1) — stale `khans_logo_white_tight.png` left in place for owner to delete. Extended `tailwind.config.ts` with DESIGN.md Section 3.2-3.4 tokens (fontSize scale incl. eyebrow/button/price, boxShadow sm/md/lg, spacing 18 = 72px, scale 98/103, ease-design, aspect card 4:3 / panel 3:2, max-w-banner 440px) and `globals.css` with Section 12 CSS variables + accordion-chevron CSS. Themed `src/components/ui/button.tsx` to DESIGN.md Section 4 (primary/secondary/accent/ghostWhite/destructive/link/iconLight/iconDark; 44/48px, radius 6). Created `site-header.tsx` (80/64px, three flex zones, 48/40px height-scaled logo, dark+light variants), `mobile-nav.tsx` (client drawer, Esc close), `site-footer.tsx` (mobile `<details>` accordions + desktop lists), `whatsapp-float.tsx`, `status-badge.tsx`, `section-header.tsx`, `vehicle-card.tsx`, `cookie-banner.tsx` (client, preferences modal + toggles). Created `src/features/home/components/` (hero-section incl. search card, trust-strip, body-type-tiles, collection-panels, browse-by-make, how-buying-works, sell-trade-band, why-choose-us, faq-section, visit-us-section) and `src/features/vehicles/mocks.ts` (12 labelled SAMPLE vehicles + search options; written via ask-gated shell — outside edit allowlist). Created `src/app/(public)/layout.tsx` (header/footer/float/cookie) and `src/app/(public)/page.tsx` (Server Component, DESIGN.md Screen 1's 12 sections in order). Added `openingHours` + `links` to `src/config/site.ts`. Created `docs/TASKS.md` with three NEEDS-BACKEND handoffs (currency casing, URL filter-param contract, featured/new-arrival queries).
+- **Reason:** Owner task "Phase 1 — Home Screen (Stitch)" per AGENTS.md Section 10 build order; layout replicated from the Stitch export with DESIGN.md as design source of truth (conflicts resolved toward written specs and documented in SUMMARY).
+- **Status:** Completed
+- **Next Session:** Owner approval to begin Phase 2 — Vehicles Listing (Screen 2). Open items: owner to supply `.opencode/skills/frontend-enhanced.md` (missing), decide Reserved-badge/eyebrow contrast (3.4:1), header variant mechanism for non-Home screens, mega-menu + header scroll behaviour, Playwright/axe UI tests.
+
 ### Session: 2026-11-27 12:58
 - **Task:** Phase 0 Scaffold
 - **Changes:** Created folder structure, package.json, tsconfig, next.config, tailwind.config, postcss, eslint, prettier, gitignore, .env.example, env.ts, utils.ts, site.ts, globals.css, layout.tsx, not-found.tsx, sitemap.ts, robots.ts. Installed dependencies (pnpm 12.23.0 installed via npm first; esbuild build script approved). Initialized shadcn/ui (components.json + ui/button.tsx); the CLI wrote Tailwind-v4-style artifacts (Geist font, oklch palette, `cn` package shim), which were restored to the owner-supplied DESIGN.md-token versions of layout.tsx, globals.css and utils.ts; button.tsx kept as the primitive to be themed in Phase 1 (AGENTS.md Section 6).
@@ -51,6 +58,20 @@ Session documentation for both agents. Each agent ONLY reads and writes to its o
 ---
 
 ## Backend Agent Edits
+
+### Session: 2026-11-27 13:47
+- **Task:** Backend Phase 0 Scaffold
+- **Changes:** Created supabase/ folder structure (migrations, tests, config.toml), src/server/ (auth guards, notifications types), src/lib/supabase/ (client, server, middleware, admin clients), src/types/database.ts, src/middleware.ts, src/lib/format.ts. Installed @supabase/ssr.
+- **Reason:** Project initialization per AGENTS.md Section 10 build order.
+- **Status:** Completed
+- **Next Session:** Owner approval to begin Phase 2 — Database schema and RLS policies (DESIGN.md Section 7).
+
+### Session: 2026-11-27 13:45
+- **Task:** Phase 0 Scaffold (Chunk 3 of 4) — auth guards, session middleware, notification interface, formatters.
+- **Changes:** Created `src/middleware.ts` (session refresh matcher), `src/server/auth/guards.ts` (`Role`, `requireAuth`, `requireRole`), `src/server/notifications/types.ts` (provider-agnostic NotificationService), `src/lib/format.ts` (formatCurrency KSh, formatDate). Contents supplied verbatim by owner. `src/middleware.ts` and `src/lib/format.ts` were outside the backend edit allowlist; written via ask-gated shell.
+- **Reason:** Owner task; auth guards per ARCHITECTURE.md Section 5; notifications interface per AGENTS.md Section 8; currency format per DESIGN.md Section 1.
+- **Status:** Completed
+- **Next Session:** Phase 0 Chunk 4 of 4 (owner instruction expected).
 
 ### Session: 2026-11-27 13:22
 - **Task:** Phase 0 Scaffold (Chunk 2 of 4) — Supabase clients and server utilities.

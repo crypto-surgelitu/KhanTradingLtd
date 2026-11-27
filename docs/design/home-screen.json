@@ -1,0 +1,430 @@
+{
+  "screenshot": {
+    "name": "projects/2730876000992488484/files/16699852413437604831",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/16699852413437604831:download",
+    "mimeType": "image/jpeg"
+  },
+  "htmlCode": {
+    "name": "projects/2730876000992488484/files/13848875714749902744",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/13848875714749902744:download",
+    "mimeType": "text/html"
+  },
+  "id": "e2472a68431e41f584e017a63017d475",
+  "generatedBy": "figaro_agent",
+  "width": "2560",
+  "height": "14212",
+  "title": "Home — KHANS TRADING Ltd (Desktop)",
+  "prompt": "Generate Screen 1 — Home (/) for KHANS TRADING Ltd at 1440px desktop.\nHeader: Transparent over the hero image using the white logo {{DATA:IMAGE:IMAGE_4}} (48px height, width auto, top-left), white navigation links (Home active with 2px #B8975A champagne underline, Vehicles, About, Contact), and white/ghost-white actions on the right.\n\nSections in exact order:\n1. Hero: Cinematic full-bleed luxury vehicle photography (single static image, no carousel) with a dark #0B0B0C overlay (45-55% opacity) for text legibility. Eyebrow \"KHANS TRADING Ltd\" in #B8975A champagne uppercase. Display headline in Jost 500: \"Find the vehicle that fits your life.\" One line of subtext (\"Premium vehicles. Honest dealing. Curated for Kenyan roads.\"). Two buttons: Accent button \"Browse vehicles\" (#B8975A bg, #0B0B0C text) and ghost-white button \"Sell or trade in\". Overlapping the bottom edge of the hero: a white search card (radius 10px, lg shadow) with fields in one row: Make, Model, Max price, Body type, and a primary #0B0B0C \"Search\" button.\n2. Trust strip: 4 clean items with Lucide 1.5px stroke icons and no numbers: \"Inspected vehicles\", \"Transparent pricing\", \"Documentation support\", \"Finance and trade-in help\".\n3. Browse by body type: Section header + 6 clean tiles (SUV, Sedan, Hatchback, Pickup, Van, Luxury) with minimalist line icons or clean cropped vehicle imagery.\n4. Featured vehicles: Section header with \"View all\" text link aligned right. 8 vehicle cards in a 4-column grid. Each card: 4:3 vehicle photo (radius 10px top), status badge top-left (\"In Stock\" or \"New Arrival\"), heart save icon button top-right, \"1/8\" photo counter bottom-right; body with make & model (H3), trim & year (Small #55585F slate), price in Jost 600 tabular numerals (e.g. \"KSh 4,850,000\", \"KSh 3,450,000\", etc. as sample vehicles), 1px #E4E2DD stone divider, 4-item spec row with icons (mileage km, transmission, fuel, engine cc), and footer actions (\"View details\" secondary button + WhatsApp icon button).\n5. Two large full-bleed collection panels side by side: \"SUVs and Crossovers\" and \"Luxury Collection\". Each has a dark overlay over premium automotive photography, an eyebrow, an H2, and two buttons: Accent \"Explore\" (#B8975A) and ghost-white \"View inventory\".\n6. Browse by make: A clean row of popular vehicle make names/marks in muted grey (#55585F).\n7. How buying works: 4 numbered steps in a clean horizontal layout: 01 Browse, 02 Enquire or reserve, 03 Inspect and test drive, 04 Drive home.\n8. Sell or trade in band: #1A1B1E graphite background, white headline, short calm copy, Accent button (#B8975A) \"Get a valuation\".\n9. New arrivals: Section header with \"View all\" link, 4 vehicle cards in a 4-column grid.\n10. Why choose us: 3 columns of short, assured statements (no statistics or invented numbers).\n11. FAQ: 5 questions in a clean accordion.\n12. Visit us: Two-column section with a clean map placeholder beside [ADDRESS], opening hours placeholder, [PHONE], [EMAIL], and Phone + WhatsApp buttons.\n\nAlso include the Cookie banner once: fixed bottom-left card (max-width 440px, white bg, 1px #E4E2DD stone border, lg shadow) with 1-2 short sentences, \"Accept all\" primary button, \"Reject non-essential\" secondary button, and \"Manage preferences\" text link.\n## Available Images\nYou MUST include the following images in this design. You must reference them\nby putting their exact placeholder IDs in `src` attributes or CSS\n`background-image` rules. Do NOT use external URLs or generate new\nplaceholders. Preserve these IDs exactly as written. Read each image's\nDescription to understand its subject, intended section, and visual role.\n\n- {{DATA:IMAGE:IMAGE_4}}\n  Description: khans_logo_white_tight.png\n  Dimensions: 2690x902\n  Aspect Ratio: 2.98\n",
+  "name": "projects/2730876000992488484/screens/e2472a68431e41f584e017a63017d475",
+  "theme": {
+    "colorMode": "LIGHT",
+    "roundness": "ROUND_FOUR",
+    "customColor": "#0b0b0c",
+    "bodyFont": "INTER",
+    "labelFont": "INTER",
+    "namedColors": {
+      "slate": "#55585F",
+      "on_error": "#ffffff",
+      "graphite": "#1A1B1E",
+      "on_error_container": "#93000a",
+      "error": "#ba1a1a",
+      "tertiary_fixed": "#e3e2e6",
+      "on_tertiary_fixed": "#1a1b1e",
+      "stone": "#E4E2DD",
+      "tertiary": "#000000",
+      "surface_container": "#efeeeb",
+      "primary_fixed": "#e5e2e3",
+      "on_surface_variant": "#46464a",
+      "surface_bright": "#faf9f6",
+      "surface_container_low": "#f4f3f0",
+      "surface_container_highest": "#e3e2df",
+      "inverse_on_surface": "#f2f1ee",
+      "on_secondary_fixed_variant": "#5b430d",
+      "surface_tint": "#5f5e5f",
+      "mist": "#8A8D94",
+      "surface_variant": "#e3e2df",
+      "inverse_surface": "#2f312f",
+      "white": "#FFFFFF",
+      "champagne-dark": "#9F7F47",
+      "warning": "#B7791F",
+      "secondary_fixed_dim": "#e6c180",
+      "on_primary_fixed_variant": "#474647",
+      "danger": "#B42318",
+      "surface_dim": "#dbdad7",
+      "outline_variant": "#c7c6ca",
+      "ink": "#0B0B0C",
+      "inverse_primary": "#c8c6c7",
+      "primary": "#000000",
+      "on_tertiary": "#ffffff",
+      "error_container": "#ffdad6",
+      "on_secondary_fixed": "#271900",
+      "tertiary_container": "#1a1b1e",
+      "success": "#1E7F4F",
+      "on_tertiary_fixed_variant": "#46474a",
+      "surface_container_lowest": "#ffffff",
+      "on_background": "#1a1c1a",
+      "on_primary_container": "#858384",
+      "surface_container_high": "#e9e8e5",
+      "outline": "#77777b",
+      "on_surface": "#1a1c1a",
+      "champagne": "#B8975A",
+      "on_secondary": "#ffffff",
+      "on_tertiary_container": "#848387",
+      "primary_container": "#1c1b1c",
+      "secondary": "#755a23",
+      "on_secondary_container": "#785c26",
+      "on_primary_fixed": "#1c1b1c",
+      "ivory": "#F8F7F4",
+      "surface": "#faf9f6",
+      "primary_fixed_dim": "#c8c6c7",
+      "secondary_fixed": "#ffdea6",
+      "champagne-tint": "#F3ECDD",
+      "secondary_container": "#fed894",
+      "on_primary": "#ffffff",
+      "info": "#1F5FA8",
+      "tertiary_fixed_dim": "#c7c6ca",
+      "background": "#faf9f6"
+    },
+    "colorVariant": "FIDELITY",
+    "overridePrimaryColor": "#0b0b0c",
+    "overrideSecondaryColor": "#b8975a",
+    "overrideTertiaryColor": "#1a1b1e",
+    "overrideNeutralColor": "#f8f7f4",
+    "spacingScale": 2,
+    "typography": {
+      "caption": {
+        "fontFamily": "Inter",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "lineHeight": "18px"
+      },
+      "headline-md": {
+        "fontFamily": "Jost",
+        "fontSize": "36px",
+        "fontWeight": "500",
+        "lineHeight": "44px"
+      },
+      "display-mobile": {
+        "fontFamily": "Jost",
+        "fontSize": "40px",
+        "fontWeight": "500",
+        "lineHeight": "44px",
+        "letterSpacing": "-0.01em"
+      },
+      "price-card": {
+        "fontFamily": "Jost",
+        "fontSize": "22px",
+        "fontWeight": "600",
+        "lineHeight": "28px"
+      },
+      "label-button": {
+        "fontFamily": "Inter",
+        "fontSize": "15px",
+        "fontWeight": "600",
+        "lineHeight": "20px"
+      },
+      "headline-md-mobile": {
+        "fontFamily": "Jost",
+        "fontSize": "28px",
+        "fontWeight": "500",
+        "lineHeight": "34px"
+      },
+      "headline-lg-mobile": {
+        "fontFamily": "Jost",
+        "fontSize": "34px",
+        "fontWeight": "500",
+        "lineHeight": "40px",
+        "letterSpacing": "-0.01em"
+      },
+      "display": {
+        "fontFamily": "Jost",
+        "fontSize": "64px",
+        "fontWeight": "500",
+        "lineHeight": "68px",
+        "letterSpacing": "-0.02em"
+      },
+      "price-hero": {
+        "fontFamily": "Jost",
+        "fontSize": "32px",
+        "fontWeight": "600",
+        "lineHeight": "38px"
+      },
+      "body-md": {
+        "fontFamily": "Inter",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "26px"
+      },
+      "headline-lg": {
+        "fontFamily": "Jost",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "lineHeight": "54px",
+        "letterSpacing": "-0.015em"
+      },
+      "eyebrow": {
+        "fontFamily": "Inter",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "lineHeight": "16px",
+        "letterSpacing": "0.12em"
+      },
+      "headline-sm": {
+        "fontFamily": "Jost",
+        "fontSize": "24px",
+        "fontWeight": "500",
+        "lineHeight": "32px"
+      },
+      "body-sm": {
+        "fontFamily": "Inter",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "22px"
+      },
+      "headline-sm-mobile": {
+        "fontFamily": "Jost",
+        "fontSize": "22px",
+        "fontWeight": "500",
+        "lineHeight": "30px"
+      },
+      "body-lg": {
+        "fontFamily": "Inter",
+        "fontSize": "18px",
+        "fontWeight": "400",
+        "lineHeight": "30px"
+      }
+    },
+    "spacing": {
+      "gutter-mobile": "1rem",
+      "margin-mobile": "1rem",
+      "space-3xl": "4rem",
+      "gutter-tablet": "1.25rem",
+      "space-xl": "2rem",
+      "space-2xl": "3rem",
+      "gutter": "1.5rem",
+      "margin": "2rem",
+      "space-md": "1rem",
+      "space-4xl": "6rem",
+      "space-xs": "0.25rem",
+      "space-lg": "1.5rem",
+      "space-sm": "0.5rem",
+      "margin-tablet": "1.5rem"
+    },
+    "headlineFontFamily": "Jost",
+    "bodyFontFamily": "Inter",
+    "labelFontFamily": "Inter"
+  },
+  "deviceType": "DESKTOP",
+  "screenType": "DESIGN",
+  "screenMetadata": {
+    "agentType": "PRO_AGENT",
+    "status": "COMPLETE",
+    "displayMode": "HTML"
+  },
+  "designSystem": {
+    "name": "assets/e25609d3acd64220bccef86efc425a9e",
+    "designSystem": {
+      "displayName": "Editorial Automotive Minimal",
+      "styleGuidelines": "## Brand & Style\n\nThe design system projects a calm, prestigious, and transparent presence tailored for premier automotive trading in Kenya. Eschewing the cluttered, aggressive aesthetics of mass-market car dealerships, the experience feels like stepping into an architectural private showroom. The interface prioritizes editorial clarity, high visual restraint, and structural precision, instilling trust, institutional security, and effortless navigation.\n\nThe visual style is **Editorial Minimalism with Subtle Tactile Restraint**:\n- Canvas surfaces are predominantly warm and light (`ivory` and crisp `white`), letting high-resolution automotive imagery serve as the visual hero.\n- Dark structural elements (`ink` and `graphite`) are reserved strictly for high-contrast anchors: the hero canvas, the public footer, and the operational admin sidebar.\n- Metallic warmth (`champagne`) provides a subtle signal of craft and prestige, applied strictly to fine-line indicators, active states, and dark-surface primary actions.\n- Form components draw inspiration from clean modern UI libraries (such as shadcn/ui), characterized by 1px architectural borders, subtle micro-elevations, deliberate geometric scales, and crisp typography.\n- Placeholders for unconfirmed facts must always appear enclosed in brackets (e.g., `[Mileage unverified]`, `[KRA clearance pending]`).\n\n## Layout & Spacing\n\nThe layout is built upon an architectural 4px baseline rhythm (`4px`, `8px`, `12px`, `16px`, `24px`, `32px`, `48px`, `64px`, `96px`). The structural grid adapts across three core breakpoints:\n\n- **Desktop (1024px+)**: 12-column grid, `24px` (`1.5rem`) gutters, `32px` (`2rem`) container margin, with a maximum layout boundary of `1280px`. Section vertical padding is `96px` (`6rem`).\n- **Tablet (640px – 1023px)**: 8-column grid, `20px` (`1.25rem`) gutters, `24px` (`1.5rem`) container margin. Section vertical padding is `72px` (`4.5rem`).\n- **Mobile (0px – 639px)**: 4-column grid, `16px` (`1rem`) gutters, `16px` (`1rem`) container margin. Section vertical padding is `56px` (`3.5rem`).\n\n### Component Dimensions & Touch Targets\n- **Header**: Fixed at `80px` on desktop and `64px` on mobile (`z-index: 50`). It does not expand on scroll.\n- **Announcement Bar**: `40px` fixed height above the main header.\n- **Sidebar Dimensions**: Desktop inventory filter sidebar is fixed at `280px` width; administrative control sidebar is fixed at `260px` width.\n- **Interactive Targets**: All form inputs, selects, and standard CTA buttons enforce an exact height of `48px` on desktop and a minimum of `44px` on mobile. Icon-only buttons maintain a minimum tap box of `44px × 44px`. The WhatsApp floating action trigger is a `56px` diameter circle.\n\n## Elevation & Depth\n\nThe design system embraces grounded, low-depth surfaces. It relies on architectural 1px borders (`stone`) to delineate spatial structures rather than heavy, dramatic shadows. Elevation tokens are reserved for transient layers and interactive feedback:\n\n- **Resting Surface (Level 0)**: Flat ivory canvas with white cards bounded by a `1px solid #E4E2DD` border. No shadow.\n- **Subtle Rest / Small Menu (Level 1 / `sm`)**: `0 1px 2px rgba(11, 11, 12, 0.06)`. Applied to resting inputs, dropdown selectors, and small popovers.\n- **Interactive Hover (Level 2 / `md`)**: `0 8px 24px rgba(11, 11, 12, 0.08)`. Applied when hovering over vehicle inventory cards, accompanying a border transition to `rgba(11, 11, 12, 0.12)`.\n- **Floating Overlays & Modals (Level 3 / `lg`)**: `0 16px 40px rgba(11, 11, 12, 0.12)`. Applied to modal dialogs, cookie notices, search flyouts, and floating action panels.\n\n### Overlays and Backdrops\n- **Hero Image Shade**: Apply an image contrast overlay consisting of a flat tint between `rgba(11, 11, 12, 0.40)` and `rgba(11, 11, 12, 0.55)` to guarantee white headline legibility over outdoor photography.\n- **Modal Dimming**: Modal and slide-in sheet overlays use a uniform backdrop of `rgba(11, 11, 12, 0.50)`.\n\n## Components\n\n### Brand Identity & Logos\n- **Desktop Header**: Placed top-left, strictly `48px` in height with automatic width (~`143px`, maintaining the ~3:1 aspect ratio). Use the black logo on light ivory/white navigation bars, and the white logo on dark surfaces.\n- **Mobile Header**: Fixed at `40px` height (~`119px` width).\n- **Clearance**: Maintain padding around the logo equal to or greater than the height of the letter \"K\". The logo must never be distorted, cropped, or overlapped by search or navigation bars.\n\n### Buttons & CTAs\n- **Primary (Light Surfaces)**: Fill `ink` (`#0B0B0C`), text `white` (`#FFFFFF`), `6px` radius, `48px` height (`44px` mobile). Hover state transitions to `graphite` (`#1A1B1E`). Active state scales to `0.98`.\n- **Primary (Dark Surfaces / Hero)**: Fill `champagne` (`#B8975A`), text `ink` (`#0B0B0C`). Hover state transitions to `champagne-dark` (`#9F7F47`).\n- **Secondary / Outline**: Fill transparent, border `1px solid #0B0B0C`, text `ink`. Hover triggers subtle background fill `rgba(11, 11, 12, 0.04)`.\n- **Ghost**: No border, text `ink`. Hover triggers `champagne-tint` background.\n- **Destructive**: Fill `danger` (`#B42318`), text `white`.\n\n### Vehicle Cards\n- **Structure**: Surface `white`, border `1px solid #E4E2DD`, radius `10px`, overflow hidden.\n- **Media**: Top-aligned `4:3` aspect ratio image container. On card hover, the image subtly scales to `1.03` with a `300ms` ease (`cubic-bezier(0.22, 1, 0.36, 1)`).\n- **Badge Positioning**: Floating status pill anchored top-left (`12px` inset) over the image.\n- **Body**: Title in `Jost 500` (`20px`), specification row (mileage, transmission, fuel) in `Inter 400` (`14px`, `slate`), and price tag displayed in `Jost 600` (`22px`, tabular numerals).\n\n### Chips & Status Badges\n- **Form**: Capsule (`999px` radius), height `26px`, padding `0 10px`, typography `Inter 500` (`12px`).\n- **States**:\n  - *In Stock*: `#1E7F4F` text on `#E8F5EE` background.\n  - *New Arrival*: `#FFFFFF` text on `#0B0B0C` background.\n  - *Reserved*: `#B7791F` text on `#FDF6E9` background.\n  - *Sold*: `#55585F` text on `#E4E2DD` background.\n  - *Incoming*: `#1F5FA8` text on `#EBF3FB` background.\n\n### Input Fields & Selects\n- **Geometry**: Height `48px`, radius `6px`, background `white`, border `1px solid #E4E2DD`, padding `0 14px`.\n- **Typography**: Label in `Inter 500` (`14px`, `ink`), input value in `Inter 400` (`15px`, `ink`), placeholder in `mist` (`#8A8D94`).\n- **States**: Focus applies `2px solid #0B0B0C` outline offset by `2px`. Error states apply `1px solid #B42318` border with accompanying error text beneath in `danger`.\n\n### Iconography\n- Exclusively use **Lucide Icons** at `1.5px` stroke weight, sized to `20px` for standard UI triggers and `24px` for prominent navigation elements.",
+      "theme": {
+        "colorMode": "LIGHT",
+        "roundness": "ROUND_FOUR",
+        "customColor": "#0b0b0c",
+        "bodyFont": "INTER",
+        "labelFont": "INTER",
+        "namedColors": {
+          "surface_container_highest": "#e3e2df",
+          "surface_container_lowest": "#ffffff",
+          "on_background": "#1a1c1a",
+          "on_surface_variant": "#46464a",
+          "surface": "#faf9f6",
+          "on_primary_fixed": "#1c1b1c",
+          "ivory": "#F8F7F4",
+          "primary_container": "#1c1b1c",
+          "on_secondary_container": "#785c26",
+          "on_error_container": "#93000a",
+          "success": "#1E7F4F",
+          "on_secondary": "#ffffff",
+          "surface_container_high": "#e9e8e5",
+          "secondary_fixed": "#ffdea6",
+          "on_secondary_fixed": "#271900",
+          "champagne-tint": "#F3ECDD",
+          "on_tertiary_container": "#848387",
+          "outline": "#77777b",
+          "on_tertiary": "#ffffff",
+          "primary_fixed_dim": "#c8c6c7",
+          "on_primary_container": "#858384",
+          "surface_dim": "#dbdad7",
+          "mist": "#8A8D94",
+          "inverse_on_surface": "#f2f1ee",
+          "secondary_container": "#fed894",
+          "tertiary": "#000000",
+          "on_tertiary_fixed": "#1a1b1e",
+          "surface_bright": "#faf9f6",
+          "secondary": "#755a23",
+          "warning": "#B7791F",
+          "on_surface": "#1a1c1a",
+          "tertiary_container": "#1a1b1e",
+          "white": "#FFFFFF",
+          "tertiary_fixed": "#e3e2e6",
+          "primary": "#000000",
+          "primary_fixed": "#e5e2e3",
+          "surface_container": "#efeeeb",
+          "on_error": "#ffffff",
+          "graphite": "#1A1B1E",
+          "surface_tint": "#5f5e5f",
+          "info": "#1F5FA8",
+          "on_tertiary_fixed_variant": "#46474a",
+          "stone": "#E4E2DD",
+          "outline_variant": "#c7c6ca",
+          "background": "#faf9f6",
+          "tertiary_fixed_dim": "#c7c6ca",
+          "on_secondary_fixed_variant": "#5b430d",
+          "inverse_primary": "#c8c6c7",
+          "on_primary": "#ffffff",
+          "ink": "#0B0B0C",
+          "error_container": "#ffdad6",
+          "surface_container_low": "#f4f3f0",
+          "danger": "#B42318",
+          "champagne": "#B8975A",
+          "secondary_fixed_dim": "#e6c180",
+          "error": "#ba1a1a",
+          "surface_variant": "#e3e2df",
+          "inverse_surface": "#2f312f",
+          "on_primary_fixed_variant": "#474647",
+          "slate": "#55585F",
+          "champagne-dark": "#9F7F47"
+        },
+        "colorVariant": "FIDELITY",
+        "overridePrimaryColor": "#0b0b0c",
+        "overrideSecondaryColor": "#b8975a",
+        "overrideTertiaryColor": "#1a1b1e",
+        "overrideNeutralColor": "#f8f7f4",
+        "spacingScale": 2,
+        "typography": {
+          "headline-sm": {
+            "fontFamily": "Jost",
+            "fontSize": "24px",
+            "fontWeight": "500",
+            "lineHeight": "32px"
+          },
+          "body-md": {
+            "fontFamily": "Inter",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "26px"
+          },
+          "label-button": {
+            "fontFamily": "Inter",
+            "fontSize": "15px",
+            "fontWeight": "600",
+            "lineHeight": "20px"
+          },
+          "eyebrow": {
+            "fontFamily": "Inter",
+            "fontSize": "12px",
+            "fontWeight": "600",
+            "lineHeight": "16px",
+            "letterSpacing": "0.12em"
+          },
+          "display-mobile": {
+            "fontFamily": "Jost",
+            "fontSize": "40px",
+            "fontWeight": "500",
+            "lineHeight": "44px",
+            "letterSpacing": "-0.01em"
+          },
+          "body-sm": {
+            "fontFamily": "Inter",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "22px"
+          },
+          "price-card": {
+            "fontFamily": "Jost",
+            "fontSize": "22px",
+            "fontWeight": "600",
+            "lineHeight": "28px"
+          },
+          "headline-lg": {
+            "fontFamily": "Jost",
+            "fontSize": "48px",
+            "fontWeight": "500",
+            "lineHeight": "54px",
+            "letterSpacing": "-0.015em"
+          },
+          "body-lg": {
+            "fontFamily": "Inter",
+            "fontSize": "18px",
+            "fontWeight": "400",
+            "lineHeight": "30px"
+          },
+          "headline-sm-mobile": {
+            "fontFamily": "Jost",
+            "fontSize": "22px",
+            "fontWeight": "500",
+            "lineHeight": "30px"
+          },
+          "caption": {
+            "fontFamily": "Inter",
+            "fontSize": "12px",
+            "fontWeight": "500",
+            "lineHeight": "18px"
+          },
+          "headline-md": {
+            "fontFamily": "Jost",
+            "fontSize": "36px",
+            "fontWeight": "500",
+            "lineHeight": "44px"
+          },
+          "price-hero": {
+            "fontFamily": "Jost",
+            "fontSize": "32px",
+            "fontWeight": "600",
+            "lineHeight": "38px"
+          },
+          "headline-md-mobile": {
+            "fontFamily": "Jost",
+            "fontSize": "28px",
+            "fontWeight": "500",
+            "lineHeight": "34px"
+          },
+          "headline-lg-mobile": {
+            "fontFamily": "Jost",
+            "fontSize": "34px",
+            "fontWeight": "500",
+            "lineHeight": "40px",
+            "letterSpacing": "-0.01em"
+          },
+          "display": {
+            "fontFamily": "Jost",
+            "fontSize": "64px",
+            "fontWeight": "500",
+            "lineHeight": "68px",
+            "letterSpacing": "-0.02em"
+          }
+        },
+        "spacing": {
+          "margin-tablet": "1.5rem",
+          "space-2xl": "3rem",
+          "space-3xl": "4rem",
+          "margin": "2rem",
+          "space-xl": "2rem",
+          "gutter-mobile": "1rem",
+          "gutter": "1.5rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "space-xs": "0.25rem",
+          "margin-mobile": "1rem",
+          "gutter-tablet": "1.25rem",
+          "space-4xl": "6rem",
+          "space-sm": "0.5rem"
+        },
+        "headlineFontFamily": "Jost",
+        "bodyFontFamily": "Inter",
+        "labelFontFamily": "Inter"
+      }
+    },
+    "version": "1"
+  }
+}
