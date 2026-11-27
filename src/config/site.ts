@@ -7,6 +7,7 @@ export const siteConfig = {
   address: "[ADDRESS]",
   openingHours: "[Opening Hours]",
   yearFounded: "[YEAR FOUNDED]",
+  supportEmail: "[systems@khanstrading.co.ke]",
   bankName: "[BANK NAME]",
   accountName: "[ACCOUNT NAME]",
   accountNumber: "[ACCOUNT NUMBER]",

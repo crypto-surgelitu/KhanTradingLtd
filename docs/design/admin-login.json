@@ -1,0 +1,19 @@
+{
+  "name": "projects/2730876000992488484/screens/3915035a3b1c436f84d2433097d2b0a4",
+  "title": "Admin Login — KHANS TRADING Ltd (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "2270",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/files/3915035a3b1c436f84d2433097d2b0a4/fileEntries/html",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/3915035a3b1c436f84d2433097d2b0a4:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/files/screenshot_0006612c55f78bd005f1036ad62212c5",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/screenshot_0006612c55f78bd005f1036ad62212c5:download",
+    "mimeType": "image/png"
+  },
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen 3915035a3b1c436f84d2433097d2b0a4. Text content and image URLs extracted from the htmlCode file via the Stitch MCP download_file tool. The export contains only two brand logo marks (superseded by public/brand/logo-black.png per the owner's logo rule) — no photo assets, so no public/images/admin-login/ downloads were needed. Region-level markup was not retrievable this session (download_file intermittent, non-401); the layout was reconstructed from the captured text, DESIGN.md Section 8 Admin Screen A and the shared Stitch design vocabulary."
+}

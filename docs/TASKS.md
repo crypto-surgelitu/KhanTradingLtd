@@ -4,6 +4,20 @@ Handoffs between agents follow AGENTS.md Section 11 formats. Newest entries firs
 
 ---
 
+NEEDS-BACKEND: Admin dashboard data queries
+Screen / component: `src/app/(admin)/admin/dashboard/page.tsx` + `src/features/admin/components/*` + `src/components/layout/admin-shell.tsx` (DESIGN.md Section 8 Admin Screen B)
+Data needed: stat totals (vehicles, in stock, reserved, sold-this-month + gross volume), recent enquiries rows (customer, vehicle, timeline, note, status, suggested action), recently added vehicles, today's viewings agenda, arriving-soon shipments — exact shapes exported from `src/features/admin/mocks.ts`
+Actions needed: read queries in the relevant feature `queries.ts` files (deals/enquiries/viewings/shipments/vehicles) composed by one dashboard query; sidebar/top-bar auth display (user name, role) behind `requireRole`
+Permissions: owner, manager, accounts, sales (Costing row stays role-gated per DESIGN.md Section 7.4)
+Until ready: typed SAMPLE mock in `src/features/admin/mocks.ts` (marked MOCK; presentational data only)
+
+NEEDS-BACKEND: Admin login auth action + password reset
+Screen / component: `src/app/(admin)/admin/login/page.tsx` + `src/components/shared/password-input.tsx` (DESIGN.md Section 8 Admin Screen A)
+Data needed: none read; auth result shape `{ ok: true, data } | { ok: false, error: { code, message } }`
+Actions needed: `signInStaff(input)` server action behind `requireAuth`/role guards in `src/server/auth`; real invalid-credentials error state (currently rendered as the designed preview state); a password-reset flow to replace the "Forgot password?" mailto link (it points at `siteConfig.supportEmail`, the design's `[systems@khanstrading.co.ke]` placeholder)
+Permissions: owner, manager, accounts, sales (DESIGN.md Section 7.4)
+Until ready: form is presentational markup with a `TODO(KHANS TRADING Ltd / backend)` comment at the submit boundary; show/hide password handled by the shared `PasswordInput` client leaf
+
 NEEDS-BACKEND: Contact form submission action
 Screen / component: `src/app/(public)/contact/page.tsx` + `src/features/contact/components/contact-form.tsx` (Screen 5)
 Data needed: none (write-only enquiry). Fields: `name`, `phone`, `email`, `interest` (buying|selling|trade-in|finance|other), `vehicle`, `message`, `consent`
