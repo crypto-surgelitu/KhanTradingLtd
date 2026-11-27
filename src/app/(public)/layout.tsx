@@ -12,7 +12,7 @@ export default function PublicLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      <SiteHeader variant="dark" />
+      <SiteHeader />
       <main>{children}</main>
       <SiteFooter />
       <WhatsAppFloat />

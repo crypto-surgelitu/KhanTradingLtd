@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Fuel, Gauge, Heart, MessageCircle, Settings2, Wrench } from "lucide-react";
+import { Car, Fuel, Gauge, Heart, MessageCircle, Settings2, Wrench } from "lucide-react";
 import { formatCurrency } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -23,6 +23,10 @@ export type VehicleCardData = {
   fuelType: string;
   engineCc: number;
   photoCount: number;
+  // The Vehicles screen export draws the drive train as the 4th spec chip
+  // (with engine size folded into the fuel label). Home cards keep the
+  // DESIGN.md Section 4 row (engine size) when drive is absent.
+  drive?: string;
 };
 
 type VehicleCardProps = {
@@ -34,7 +38,9 @@ const specItems = (vehicle: VehicleCardData) => [
   { icon: Gauge, value: `${vehicle.mileageKm.toLocaleString("en-KE")} km`, label: "Mileage" },
   { icon: Settings2, value: vehicle.transmission, label: "Transmission" },
   { icon: Fuel, value: vehicle.fuelType, label: "Fuel type" },
-  { icon: Wrench, value: `${vehicle.engineCc.toLocaleString("en-KE")} cc`, label: "Engine size" },
+  vehicle.drive
+    ? { icon: Car, value: vehicle.drive, label: "Drive" }
+    : { icon: Wrench, value: `${vehicle.engineCc.toLocaleString("en-KE")} cc`, label: "Engine size" },
 ];
 
 // DESIGN.md Section 4 vehicle card: 4:3 media, status badge top-left, save

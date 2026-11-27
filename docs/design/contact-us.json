@@ -1,0 +1,19 @@
+{
+  "name": "projects/2730876000992488484/screens/47a6eb062cb449f8839eb1ecdcc2f967",
+  "title": "Contact Us — KHANS TRADING Ltd (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "5822",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/files/47a6eb062cb449f8839eb1ecdcc2f967/fileEntries/html",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/47a6eb062cb449f8839eb1ecdcc2f967:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/files/screenshot_0006612c4daf9af7023bc3e3823da723",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/screenshot_0006612c4daf9af7023bc3e3823da723:download",
+    "mimeType": "image/png"
+  },
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen 47a6eb062cb449f8839eb1ecdcc2f967. Screen text content and image URLs were extracted from the htmlCode file via the Stitch MCP download_file tool; the export contains only the two brand logo images (header/footer, superseded by public/brand/) plus a designed map placeholder block — no photo assets to download. The map/location block and the form were replicated from the captured text and the shared Stitch design vocabulary after download_file began failing intermittently (non-401)."
+}

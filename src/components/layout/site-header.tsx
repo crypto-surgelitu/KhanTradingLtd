@@ -1,27 +1,33 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Heart, MessageCircle, Search } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { MobileNav } from "@/components/layout/mobile-nav";
 
 const navLinks = [
-  { href: "/", label: "Home", active: true },
-  { href: "/vehicles", label: "Vehicles", active: false },
-  { href: "/about", label: "About", active: false },
-  { href: "/contact", label: "Contact", active: false },
+  { href: "/", label: "Home" },
+  { href: "/vehicles", label: "Vehicles" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 // DESIGN.md Section 5.1 header. Fixed 80px desktop / 64px mobile row with three
 // flex zones: logo slot (flex 0 0 auto, height-sized logo), centred navigation,
 // actions. "dark" is the Home hero treatment (white logo, white links); "light"
-// is the standard public treatment (white bar, black logo).
+// is the standard public treatment (white bar, black logo). Without an explicit
+// variant the treatment follows the route: dark over the Home hero, light on
+// every other public screen.
 type SiteHeaderProps = {
   variant?: "dark" | "light";
 };
 
-export function SiteHeader({ variant = "light" }: SiteHeaderProps) {
-  const dark = variant === "dark";
+export function SiteHeader({ variant }: SiteHeaderProps = {}) {
+  const pathname = usePathname();
+  const dark = variant ? variant === "dark" : pathname === "/";
 
   return (
     <header
@@ -50,24 +56,28 @@ export function SiteHeader({ variant = "light" }: SiteHeaderProps) {
           aria-label="Primary"
           className="hidden flex-1 items-center justify-center gap-5 whitespace-nowrap lg:flex xl:gap-8"
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              aria-current={link.active ? "page" : undefined}
-              className={`font-body text-button transition-colors ${
-                link.active
-                  ? `underline decoration-champagne decoration-2 underline-offset-8 ${
-                      dark ? "text-white" : "text-ink"
-                    }`
-                  : dark
-                    ? "text-mist hover:text-champagne"
-                    : "text-slate hover:text-ink"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active =
+              link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={active ? "page" : undefined}
+                className={`font-body text-button transition-colors ${
+                  active
+                    ? `underline decoration-champagne decoration-2 underline-offset-8 ${
+                        dark ? "text-white" : "text-ink"
+                      }`
+                    : dark
+                      ? "text-mist hover:text-champagne"
+                      : "text-slate hover:text-ink"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Actions: search + saved on desktop, saved + menu on mobile (5.1). */}

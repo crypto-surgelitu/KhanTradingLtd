@@ -4,6 +4,16 @@ Shared file (AGENTS.md Section 14). Each entry records a decision, its reason, t
 
 ---
 
+## 2026-11-28 — PROPOSAL (Section 19): Vehicles-screen design conflicts awaiting owner ruling
+
+**Problem:** The approved Stitch Vehicles export (Screen `497bcdc6d84847eda291440767199d3e`) conflicts with `DESIGN.md` in three small places: (1) its colour-filter swatches use two paint hexes outside the token set (`#1A2E44` Navy Blue, `#5C1D24` Wine Red); (2) its vehicle card shows the drive train as the 4th spec chip while `DESIGN.md` Section 4 specifies engine size there (and folds engine into the fuel label, e.g. "Diesel (2.8L)"); (3) it omits the Mileage and Drive filters that `DESIGN.md` Screen 2 lists. The owner's task said to replicate the Stitch export exactly while using tokens only.
+
+**Proposal:** (1) Either add `swatch-navy` and `swatch-wine` colour tokens or accept the current token stand-ins (`bg-info`, `bg-danger`). (2) Keep the implemented compromise: `VehicleCard` renders drive when the data provides `drive`, otherwise the Section 4 engine-size chip (no change for Home). (3) Follow the export's filter set for this screen.
+
+**Impact:** Current build uses `bg-info`/`bg-danger` swatch stand-ins (visible colour difference on two of six swatches), the drive chip compromise, and the export's filter list. Awaiting the owner's ruling; no further work is blocked.
+
+---
+
 ## 2026-11-27 — Phase 0 scaffold: folder structure created (Chunk 1)
 
 **Decision:** Created the AGENTS.md Section 5 folder skeleton: 15 empty `.gitkeep` placeholders (`docs/design/`, `public/brand/`, `src/app/(public)/`, `src/app/(admin)/admin/`, `src/app/api/`, `src/components/{ui,layout,shared}/`, `src/features/`, `src/server/`, `src/lib/`, `src/config/`, `src/hooks/`, `src/types/`, `tests/`) plus root `.env.example` listing variable names and purposes only (INTEGRATIONS.md Section 12). No application code, no dependencies, no folders beyond the approved tree.

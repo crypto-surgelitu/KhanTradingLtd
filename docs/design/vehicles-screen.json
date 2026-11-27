@@ -1,0 +1,17 @@
+{
+  "error": {
+    "code": 401,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "UNAUTHENTICATED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "ACCESS_TOKEN_TYPE_UNSUPPORTED",
+        "metadata": {
+          "method": "google.x.pitchfork.aida.appcompanion.v1.AppCompanionAgentService.GetScreen",
+          "service": "stitch.googleapis.com"
+        }
+      }
+    ]
+  }
+}
