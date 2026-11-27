@@ -6,6 +6,13 @@ Session documentation for both agents. Each agent ONLY reads and writes to its o
 
 ## Frontend Agent Edits
 
+### Session: 2026-11-27 12:58
+- **Task:** Phase 0 Scaffold
+- **Changes:** Created folder structure, package.json, tsconfig, next.config, tailwind.config, postcss, eslint, prettier, gitignore, .env.example, env.ts, utils.ts, site.ts, globals.css, layout.tsx, not-found.tsx, sitemap.ts, robots.ts. Installed dependencies (pnpm 12.23.0 installed via npm first; esbuild build script approved). Initialized shadcn/ui (components.json + ui/button.tsx); the CLI wrote Tailwind-v4-style artifacts (Geist font, oklch palette, `cn` package shim), which were restored to the owner-supplied DESIGN.md-token versions of layout.tsx, globals.css and utils.ts; button.tsx kept as the primitive to be themed in Phase 1 (AGENTS.md Section 6).
+- **Reason:** Project initialization per AGENTS.md Section 10 build order.
+- **Status:** Completed
+- **Next Session:** Owner approval to begin Phase 1 — Home screen (DESIGN.md Screen 1)
+
 ### Session: 2026-11-27 12:45
 - **Task:** Phase 0 scaffold, Chunk 3 of 4 — create source files (contents supplied verbatim by owner).
 - **Changes:** Created `src/lib/env.ts` (Zod env validation), `src/lib/utils.ts` (`cn` helper), `src/config/site.ts` (placeholder business details per AGENTS.md Section 6), `src/app/globals.css`, `src/app/layout.tsx` (Jost/Inter via next/font), `src/app/not-found.tsx`, `src/app/sitemap.ts`, `src/app/robots.ts`. Overwrote `.env.example` with owner's exact version (note: uses `BREVO_API_KEY`, diverging from INTEGRATIONS.md Section 5/12 `RESEND_API_KEY` — flagged for owner). 4 files via edit tool (allowlisted); 5 via one ask-gated shell batch.
