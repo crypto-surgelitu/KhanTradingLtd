@@ -52,6 +52,13 @@ Session documentation for both agents. Each agent ONLY reads and writes to its o
 
 ## Backend Agent Edits
 
+### Session: 2026-11-27 13:15
+- **Task:** Phase 0 Scaffold (Chunk 1 of 4) — backend folder structure and Supabase config.
+- **Changes:** Created `supabase/` (config.toml, empty seed.sql, migrations/, tests/), `src/server/auth/`, `src/server/notifications/`, `src/lib/supabase/`, `src/app/api/webhooks/`, `src/app/api/uploads/` with `.gitkeep` placeholders, and placeholder `src/types/database.ts`. `docs/design/` already existed (left as is).
+- **Reason:** Owner task; folder tree per AGENTS.md Section 5; config.toml and database.ts contents supplied verbatim by owner.
+- **Status:** Completed
+- **Next Session:** Phase 0 Chunk 2 of 4 (owner instruction expected).
+
 ### Session: [YYYY-MM-DD HH:MM]
 - **Task:** [What was requested]
 - **Changes:** [Specific schemas, migrations, Server Actions, RLS policies]
