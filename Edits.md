@@ -6,6 +6,13 @@ Session documentation for both agents. Each agent ONLY reads and writes to its o
 
 ## Frontend Agent Edits
 
+### Session: 2026-11-27 12:37
+- **Task:** Phase 0 scaffold, Chunk 2 of 4 — create configuration files (contents supplied verbatim by owner).
+- **Changes:** Created `package.json`, `tsconfig.json`, `next.config.mjs`, `tailwind.config.ts`, `postcss.config.mjs`, `.eslintrc.json`, `.prettierrc`, `.gitignore` at repository root. 7 of 8 written via one ask-gated shell batch (Shared files outside the edit allowlist); owner deferred verification to a later chunk.
+- **Reason:** Owner task "Phase 0 Scaffold (Chunk 2 of 4)". Tokens in `tailwind.config.ts` match DESIGN.md Sections 3.1/3.3/12; dependency list as approved by owner (AGENTS.md Section 10.5).
+- **Status:** Completed
+- **Next Session:** Phase 0 Chunk 3 per owner instruction (verification (install/lint/typecheck/build) still outstanding, plus Chunk 1 leftover: paste AGENTS.md session-log proposal from `docs/DECISIONS.md`).
+
 ### Session: 2026-11-27 12:31
 - **Task:** Phase 0 scaffold, Chunk 1 of 4 — create the folder structure only (no application code).
 - **Changes:** Created 15 empty `.gitkeep` placeholders — `docs/design/`, `public/brand/`, `src/app/(public)/`, `src/app/(admin)/admin/`, `src/app/api/`, `src/components/ui/`, `src/components/layout/`, `src/components/shared/`, `src/features/`, `src/server/`, `src/lib/`, `src/config/`, `src/hooks/`, `src/types/`, `tests/` — and root `.env.example` (variable names + purpose comments only, from INTEGRATIONS.md Section 12). 7 `.gitkeep` written via the edit tool; the other 8 `.gitkeep` + `.env.example` via one ask-gated shell command (outside the `opencode.json` edit allowlist). Recorded in `docs/DECISIONS.md`.
