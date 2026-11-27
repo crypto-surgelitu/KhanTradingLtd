@@ -4,6 +4,20 @@ Handoffs between agents follow AGENTS.md Section 11 formats. Newest entries firs
 
 ---
 
+NEEDS-BACKEND: Viewing booking action + availability query
+Screen / component: `src/app/(public)/vehicles/[id]/book/page.tsx` + `src/features/booking/components/{booking-form,booking-confirmation,booking-summary}` (DESIGN.md Screen 6C)
+Data needed: viewing availability (next-14-days day chips with Available/Booked, free time slots per day) and the vehicle summary; SAMPLE shapes live in `src/features/booking/mocks.ts` (`bookingDaySlots`, `bookingMorningSlots`, `bookingAfternoonSlots`, `bookingVehicleSummary`, `bookingConfirmation`)
+Actions needed: `submitViewingBooking(input)` in `features/viewings/actions.ts` (type viewing|test_drive, date, slot, name, phone, email, notes, consent; Zod schema in `schemas.ts`), availability query behind it, rate limiting + Turnstile (AGENTS.md Section 8), confirmation voucher + reminder scheduling (24h before)
+Permissions: public (customer record created server-side)
+Until ready: presentational client leaf `booking-form.tsx` with a `TODO(KHANS TRADING Ltd / backend)` comment; the confirmation card renders the export's designed state; the day/slot pickers and consent-gated submit work as UI state only
+
+NEEDS-BACKEND: Deals pipeline board query + stage mutations
+Screen / component: `src/app/(admin)/admin/deals/page.tsx` + `src/features/admin/components/{deals-summary,deals-toolbar,deal-card,deals-board}` (DESIGN.md Section 8 Admin Screen G)
+Data needed: board columns (stage, count, portfolio value) with deal cards — the SAMPLE shapes live in `src/features/admin/mocks.ts` (`dealsStatCards`, `dealsBoard`, `dealsStageOptions`, `dealsConciergeOptions`); summary strip metrics
+Actions needed: `moveDealStage(id, stage, note, notifyClient)` (transaction + audit + notification per AGENTS.md Section 8), `createDeal(input)`, row actions menu (put on hold, cancel); stage list editable in Admin Settings
+Permissions: owner, manager, sales (accounts read-only)
+Until ready: presentational board over the labelled SAMPLE mock; filters and view toggles are native controls with a TODO comment; drag-and-drop deferred (stage moves will use the confirm dialog flow from DESIGN.md Screen G)
+
 NEEDS-BACKEND: Verified tracker session data + client actions (uploads, notifications)
 Screen / component: `src/app/(public)/track/[id]/page.tsx` + `src/features/tracking/components/*` (DESIGN.md Screen 6B)
 Data needed: verified-session read model — deal summary, stage timeline with timestamps, current-step explanation fields, document checklist with statuses/reject reasons, issued documents (signed URLs), updates feed, payments ledger + financing, notification prefs. The SAMPLE shapes live in `src/features/tracking/mocks.ts` (`trackSummary`, `trackStages`, `trackCurrentStep`, `trackDocuments`, `trackIssuedDocuments`, `trackUpdates`, `trackPayments`, `trackNotificationChannels`)
