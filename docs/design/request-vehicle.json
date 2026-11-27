@@ -1,0 +1,19 @@
+{
+  "name": "projects/2730876000992488484/screens/16f9de634fff4fb0b1ce7f158a54a1d3",
+  "title": "Request a Vehicle — KHANS TRADING Ltd (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "7524",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/files/13509229402187467655",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/13509229402187467655:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/files/12783764787827108475",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/12783764787827108475:download",
+    "mimeType": "image/jpeg"
+  },
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen 16f9de634fff4fb0b1ce7f158a54a1d3. Full text content and image URLs extracted from the htmlCode file via the Stitch MCP download_file tool. Two showcase photos downloaded and converted to WebP in public/images/request-vehicle/; the two logo marks are served from public/brand/. The export's literal operating-hours line was replaced by src/config/site.ts placeholders per the owner's business-data rule."
+}

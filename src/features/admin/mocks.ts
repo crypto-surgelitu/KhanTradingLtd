@@ -289,3 +289,98 @@ export const dealsStageOptions = [
 export const dealsConciergeOptions = [
   "All Concierges", "Alex Kariuki", "Sharon Muthoni", "Brian Omondi",
 ];
+
+// MOCK: Admin Viewings Calendar sample week — the export's demo bookings
+// (SAMPLE). Day placement of the scattered events is an interpretation of the
+// export's grid; the Today column carries the detail-drawer booking.
+export const viewingsStats = [
+  { label: "Today's Bookings:", value: "6" },
+  { label: "Confirmed:", value: "4" },
+  { label: "Pending Approval:", value: "2" },
+  { label: "Completion Rate:", value: "98%" },
+] as const;
+
+export const viewingsDays = [
+  { key: "mon", label: "Mon", num: "25", today: false },
+  { key: "tue", label: "Tue", num: "26", today: false },
+  { key: "wed", label: "Wed", num: "27", today: false },
+  { key: "thu", label: "Thu", num: "28", today: false },
+  { key: "fri", label: "Today", num: "29", today: true },
+  { key: "sat", label: "Sat", num: "30", today: false },
+  { key: "sun", label: "Sun", num: "01", today: false },
+] as const;
+
+export const viewingsHours = [
+  "08:00", "09:00", "10:00", "11:00", "12:00", "13:00",
+  "14:00", "15:00", "16:00", "17:00", "18:00",
+] as const;
+
+export type ViewingEvent = {
+  id: string;
+  day: string;
+  hour: string;
+  time: string;
+  status: string;
+  statusTone: "success" | "warning" | "info" | "muted" | "danger";
+  vehicle: string;
+  client: string;
+  avatar: string;
+};
+
+export const viewingsEvents: ViewingEvent[] = [
+  { id: "bk-gle-450", day: "mon", hour: "09:00", time: "09:30 AM", status: "Confirmed", statusTone: "success", vehicle: "Mercedes GLE 450", client: "Sarah H.", avatar: "SM" },
+  { id: "bk-harrier", day: "tue", hour: "10:00", time: "10:00 AM", status: "Completed", statusTone: "muted", vehicle: "Toyota Harrier G", client: "Amina A.", avatar: "BO" },
+  { id: "bk-2024-prd-882", day: "fri", hour: "11:00", time: "11:00 – 12:00", status: "Active", statusTone: "info", vehicle: "Land Cruiser Prado TZ-G", client: "David Kamau", avatar: "AK" },
+  { id: "bk-lx570", day: "wed", hour: "11:00", time: "11:00 AM", status: "Confirmed", statusTone: "success", vehicle: "Lexus LX570 V8", client: "Wanjiku N.", avatar: "AK" },
+  { id: "bk-x5-30d", day: "thu", hour: "14:00", time: "02:00 PM", status: "Completed", statusTone: "muted", vehicle: "BMW X5 xDrive30d", client: "Evans Mwangi", avatar: "SM" },
+  { id: "bk-cayenne", day: "fri", hour: "14:00", time: "02:30 PM", status: "No-show", statusTone: "danger", vehicle: "Porsche Cayenne", client: "K. Gitau", avatar: "MISSED" },
+  { id: "bk-lc300", day: "sat", hour: "15:00", time: "03:30 PM", status: "Requested", statusTone: "warning", vehicle: "Land Cruiser 300 ZX", client: "Dr. P. Ochieng", avatar: "AK" },
+];
+
+export const viewingsLegend = [
+  { label: "Confirmed", tone: "success" },
+  { label: "Requested", tone: "warning" },
+  { label: "Completed", tone: "muted" },
+  { label: "No-show / Cancelled", tone: "danger" },
+] as const;
+
+export const viewingsDetail = {
+  ref: "REF #BK-2024-PRD-882",
+  status: "Confirmed",
+  title: "Dynamic Highway Test Drive",
+  when: "Friday, 29 Nov 2024 · 11:00 AM – 12:00 PM EAT",
+  reminder:
+    "WhatsApp & SMS sent 24h prior (Dispatched Nov 28, 11:00 AM). Delivery verified via Safaricom gateway.",
+  client: {
+    initials: "DK",
+    name: "David Kamau",
+    descriptor: "Private VIP Buyer · Nairobi Central",
+    tier: "VIP Tier 1",
+    phone: "+254 712 345 678",
+  },
+  notes:
+    "“Client requested Japanese CarVX sheet & open bypass dynamic test drive. Driving licence pre-checked.”",
+  vehicle: {
+    title: "2019 Toyota Land Cruiser Prado TZ-G",
+    specs: "2.8L Diesel · Auto · Stock #KT-PRD-19",
+    price: "KSh 7,650,000",
+    readiness: "Bay 02 Ready",
+    image: "/images/admin-viewings/vehicle-land-cruiser-prado.webp",
+    imageAlt: "A pristine 2019 Toyota Land Cruiser Prado TZ-G in gleaming Pearl White parked inside a luxury architectural automotive showroom with neutral concrete and warm champagne studio lighting reflections.",
+  },
+  concierge: { initials: "AK", name: "Alex Kariuki" },
+  route: "Southern Bypass (30m)",
+  audit: [
+    { entry: "Nov 28, 14:15 · Reserved online by David Kamau", tag: "Web" },
+    { entry: "Nov 28, 14:20 · Assigned to Alex Kariuki", tag: "Auto" },
+    { entry: "Nov 28, 15:00 · 24h reminder dispatched", tag: "Sent" },
+  ],
+} as const;
+
+export const viewingsToolbarOptions = {
+  concierges: ["All Concierges (3)", "Alex Kariuki (Senior)", "Samuel Mwangi", "Brian Omondi"],
+  statuses: ["All Statuses", "Confirmed", "Requested", "Completed", "No-show", "Cancelled"],
+  types: ["All Types", "Dynamic Test Drive", "Private Viewing", "Pre-Delivery Inspection"],
+  range: "Nov 25 – Dec 01, 2024",
+  timezone: "EAT (UTC+3)",
+} as const;

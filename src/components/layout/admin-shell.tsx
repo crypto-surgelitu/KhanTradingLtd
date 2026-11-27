@@ -30,6 +30,10 @@ import { dashboardUser } from "@/features/admin/mocks";
 type AdminShellProps = {
   children: React.ReactNode;
   current?: string;
+  /** Top-bar page title; defaults to the shell-wide label. */
+  topBarTitle?: string;
+  /** Top-bar primary action; defaults to "Add vehicle". */
+  action?: React.ReactNode;
 };
 
 const navGroups = [
@@ -62,7 +66,7 @@ const navGroups = [
   },
 ] as const;
 
-export function AdminShell({ children, current }: AdminShellProps) {
+export function AdminShell({ children, current, topBarTitle, action }: AdminShellProps) {
   return (
     <div className="flex min-h-screen flex-col bg-ivory lg:flex-row">
       <aside className="flex flex-col gap-8 bg-graphite px-4 py-6 text-white lg:w-64 lg:shrink-0">
@@ -135,7 +139,9 @@ export function AdminShell({ children, current }: AdminShellProps) {
 
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="sticky top-0 z-40 flex flex-wrap items-center gap-3 border-b border-stone bg-white px-4 py-3 sm:px-6">
-          <p className="font-heading text-h3 lg:text-h3-lg">Dealership Operations</p>
+          <p className="font-heading text-h3 lg:text-h3-lg">
+            {topBarTitle ?? "Dealership Operations"}
+          </p>
           <div className="relative hidden flex-1 items-center md:flex">
             <label htmlFor="admin-search" className="sr-only">
               Search
@@ -165,13 +171,15 @@ export function AdminShell({ children, current }: AdminShellProps) {
             >
               <Bell aria-hidden="true" className="size-5" strokeWidth={1.5} />
             </button>
-            <Link
-              href="/admin/add-vehicle"
-              className={buttonVariants({ variant: "primary" })}
-            >
-              <Plus aria-hidden="true" className="mr-2 size-5" strokeWidth={1.5} />
-              Add vehicle
-            </Link>
+            {action ?? (
+              <Link
+                href="/admin/add-vehicle"
+                className={buttonVariants({ variant: "primary" })}
+              >
+                <Plus aria-hidden="true" className="mr-2 size-5" strokeWidth={1.5} />
+                Add vehicle
+              </Link>
+            )}
             <button
               type="button"
               aria-label="Account"

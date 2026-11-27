@@ -4,6 +4,20 @@ Handoffs between agents follow AGENTS.md Section 11 formats. Newest entries firs
 
 ---
 
+NEEDS-BACKEND: Viewings calendar query + booking actions
+Screen / component: `src/app/(admin)/admin/viewings/page.tsx` + `src/features/admin/components/{viewings-toolbar,viewings-calendar,viewings-drawer}` (DESIGN.md Section 8 Admin Screen I)
+Data needed: bookings for a date range (id, day/hour placement, time label, type, status, vehicle, client, assigned concierge), availability settings (opening hours, slot length, blocked dates), booking detail (reminder state, client particulars, notes, allocated inventory, route, audit trail). SAMPLE shapes live in `src/features/admin/mocks.ts` (`viewingsStats`, `viewingsDays`, `viewingsHours`, `viewingsEvents`, `viewingsLegend`, `viewingsDetail`, `viewingsToolbarOptions`)
+Actions needed: `confirmViewing(id)`, `rescheduleViewing(id, slot)`, `markNoShow(id)`, `cancelViewing(id)`, `markViewingCompleted(id)` (audit + client notification per AGENTS.md Section 8), `createViewing(input)`, availability CRUD behind `requireRole`
+Permissions: owner, manager, sales
+Until ready: presentational week grid + designed open drawer over the labelled SAMPLE mock; controls (range nav, view switcher, filters) are native elements with a TODO comment; the drawer renders the export's designed open state for the Today booking
+
+NEEDS-BACKEND: Vehicle request submission action
+Screen / component: `src/app/(public)/request-vehicle/page.tsx` + `src/features/request/components/*` (DESIGN.md Screen 6D)
+Data needed: none read; submission payload = the four form sections (make, model/trim, year min/max, body, powertrain, transmission, colour, budget min/max, asset-finance flag, must-haves, import acceptance, timeline window, name, phone, email, preferred channel, consent). SAMPLE confirmation/showcase shapes live in `src/features/request/mocks.ts`
+Actions needed: `submitVehicleRequest(input)` in `features/requests/actions.ts` (Zod schema in `schemas.ts`; status lifecycle new|sourcing|found|closed per DESIGN.md Section 7), tracking-code issuance, rate limiting + Turnstile (AGENTS.md Section 8); "Match from stock" admin action later
+Permissions: public (customer record created server-side)
+Until ready: presentational client leaf `request-form.tsx` with a `TODO(KHANS TRADING Ltd / backend)` comment; the confirmation card renders the export's designed state; the timeline/import/contact chips are UI state only
+
 NEEDS-BACKEND: Viewing booking action + availability query
 Screen / component: `src/app/(public)/vehicles/[id]/book/page.tsx` + `src/features/booking/components/{booking-form,booking-confirmation,booking-summary}` (DESIGN.md Screen 6C)
 Data needed: viewing availability (next-14-days day chips with Available/Booked, free time slots per day) and the vehicle summary; SAMPLE shapes live in `src/features/booking/mocks.ts` (`bookingDaySlots`, `bookingMorningSlots`, `bookingAfternoonSlots`, `bookingVehicleSummary`, `bookingConfirmation`)

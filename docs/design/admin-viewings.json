@@ -1,0 +1,19 @@
+{
+  "name": "projects/2730876000992488484/screens/44f762d95c5d4ba497f851d31324a5b7",
+  "title": "Admin Viewings Calendar — KHANS TRADING Ltd (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "3046",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/screens/44f762d95c5d4ba497f851d31324a5b7/fileEntries/html",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/screens/44f762d95c5d4ba497f851d31324a5b7/fileEntries/html:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/files/screenshot_0006612d14a2df7104e74183112b6251",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/screenshot_0006612d14a2df7104e74183112b6251:download",
+    "mimeType": "image/png"
+  },
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen 44f762d95c5d4ba497f851d31324a5b7. Full text content and image URLs extracted from the htmlCode file via the Stitch MCP download_file tool. One vehicle thumbnail downloaded and converted to WebP in public/images/admin-viewings/; the sidebar logo asset is served from public/brand/logo-white.png. The export's literal operating-bay hours were replaced by src/config/site.ts placeholders. The export shows the events scattered in a week grid without explicit day placement in the text flow; day assignment is an interpretation with the detail-drawer booking kept on the Today column."
+}
