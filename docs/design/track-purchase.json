@@ -1,0 +1,19 @@
+{
+  "name": "projects/2730876000992488484/screens/8aa14e6c2dad488a8fa82f0ed38af3ea",
+  "title": "Track Your Purchase: Lookup — KHANS TRADING Ltd (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "3698",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/files/7533044332871543637",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/7533044332871543637:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/files/14972738486588752818",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/14972738486588752818:download",
+    "mimeType": "image/jpeg"
+  },
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen 8aa14e6c2dad488a8fa82f0ed38af3ea. Full text content and image URLs extracted from the htmlCode file via the Stitch MCP download_file tool. The export contains only logo marks (served from public/brand/ per the owner's logo rule) — no photo assets, so no public/images/track/ downloads were needed. The export's footer variant (different quick-link labels and a hotline block) was not adopted: DESIGN.md Section 5.2 requires the identical shared footer on every public screen, and the hotline/hours render from src/config/site.ts placeholders instead of the export's dummy number."
+}

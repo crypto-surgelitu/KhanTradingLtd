@@ -4,6 +4,20 @@ Handoffs between agents follow AGENTS.md Section 11 formats. Newest entries firs
 
 ---
 
+NEEDS-BACKEND: Purchase lookup + OTP verification
+Screen / component: `src/app/(public)/track/page.tsx` + `src/features/tracking/components/track-form.tsx` (DESIGN.md Screen 6A)
+Data needed: none read before verification (privacy rule: documents/payment details only after two-factor verification)
+Actions needed: `lookupPurchase(reference, phone)` returning a masked-vehicle hint + dispatching the OTP (`sendPurchaseOtp`), and `verifyPurchaseOtp(reference, phone, code)` issuing the tracker session — hashed codes, short expiry, limited attempts, no user-enumeration errors (AGENTS.md Section 8); rate limiting + Turnstile
+Permissions: public lookup; full deal data only for the verified session (Screen 6B)
+Until ready: the two-step lookup is a presentational client leaf with a `TODO(KHANS TRADING Ltd / backend)` comment; the error state, masked phone, ref and countdown are the export's designed SAMPLE state
+
+NEEDS-BACKEND: Vehicle reservation submit action
+Screen / component: `src/app/(public)/vehicles/[id]/reserve/page.tsx` + `src/features/reservation/components/{reserve-form,reserve-summary}` (DESIGN.md Screen 6)
+Data needed: reservation read model for the summary card (vehicle title/specs/price, holding deposit, balance due, ref) and the buyer summary of step 1; `src/features/reservation/mocks.ts` exports the SAMPLE shapes to replace
+Actions needed: `submitReservation(input)` in `features/reservation/actions.ts` (Zod schema in `schemas.ts`): deposit method (bank_transfer | showroom | finance), proof-of-payment upload with server-side validation, lending institution + equity for finance, consent flag; rate limiting + Turnstile per AGENTS.md Section 8; also the step-1 details/edit flow and the step-3 confirmation state
+Permissions: public (authenticated-or-anonymous enquiry path; role checks inside the action)
+Until ready: presentational client leaf `reserve-form.tsx` with a `TODO(KHANS TRADING Ltd / backend)` comment at the submit boundary; bank coordinates render from `src/config/site.ts` placeholders; buyer/vehicle data are the labelled SAMPLE mock
+
 NEEDS-BACKEND: Vehicle create/update action + photo upload
 Screen / component: `src/app/(admin)/admin/add-vehicle/page.tsx` + `src/features/admin/components/add-vehicle-form.tsx` (DESIGN.md Section 8 Admin Screen D)
 Data needed: none read; vehicle create/update payload = the form fields (make, model, trim, year, body type, price / price-on-request / negotiable, mileage, transmission, fuel, engine cc, drivetrain, colour, seats, doors, listing status, featured, new-arrival, photos[], overview text, features[])

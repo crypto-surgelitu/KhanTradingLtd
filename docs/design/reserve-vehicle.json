@@ -1,0 +1,19 @@
+{
+  "name": "projects/2730876000992488484/screens/38023ec39a134548bc66eef553b6e16f",
+  "title": "Reserve Vehicle — 2019 Toyota Land Cruiser Prado TZ-G (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "4868",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/files/13992930135992649246",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/13992930135992649246:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/files/12695017321013265112",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/12695017321013265112:download",
+    "mimeType": "image/jpeg"
+  },
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen 38023ec39a134548bc66eef553b6e16f. Full text content and image URLs extracted from the htmlCode file via the Stitch MCP download_file tool. One vehicle photo downloaded and converted to WebP in public/images/reserve-vehicle/; the two logo marks in the export (header/footer) are served from public/brand/ per the owner's logo rule."
+}
