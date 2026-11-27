@@ -4,6 +4,20 @@ Shared file (AGENTS.md Section 14). Each entry records a decision, its reason, t
 
 ---
 
+## 2026-11-27 — Phase 0 scaffold: folder structure created (Chunk 1)
+
+**Decision:** Created the AGENTS.md Section 5 folder skeleton: 15 empty `.gitkeep` placeholders (`docs/design/`, `public/brand/`, `src/app/(public)/`, `src/app/(admin)/admin/`, `src/app/api/`, `src/components/{ui,layout,shared}/`, `src/features/`, `src/server/`, `src/lib/`, `src/config/`, `src/hooks/`, `src/types/`, `tests/`) plus root `.env.example` listing variable names and purposes only (INTEGRATIONS.md Section 12). No application code, no dependencies, no folders beyond the approved tree.
+
+**Reason:** Owner task "Phase 0 Scaffold (Chunk 1 of 4)"; AGENTS.md Section 10 build order step 0 (scaffold). `.gitkeep` keeps empty folders tracked by git. `.env.example` is names-only per AGENTS.md Sections 8 and 14.
+
+**Alternatives:**
+- Create folders lazily with each first file — rejected: git cannot track empty folders and the owner asked for the structure up front.
+- Defer `.env.example` to a later chunk — rejected: it appears in the Chunk 1 scope tree.
+
+**Impact / note:** 7 `.gitkeep` files were written through the frontend agent's normal edit tool (within its `opencode.json` allowlist). The other 8 `.gitkeep` and `.env.example` fall outside that allowlist (`src/app/api/*`, `src/server/*`, `*.env*` denied; `docs/design`, `src/app/(public)`, `src/app/(admin)/admin`, `src/features`, `src/lib`, `src/types` unlisted) and were created via one ask-gated shell command, owner-approved at the prompt. All `.gitkeep` are 0 bytes; `.env.example` contains no values. Observation for the owner: if frontend should scaffold such paths without a shell prompt in future, the allowlist would need matching allow rules — no proposal filed, since Chunk 1 is complete without one. No application code, dependencies, schema or contracts affected.
+
+---
+
 ## 2026-11-27 — Edits.md session log adopted for both agents
 
 **Decision:** A new repository-root file `Edits.md` becomes the shared session documentation log. It has two sections — "Frontend Agent Edits" and "Backend Agent Edits" — and each agent reads and writes **only its own section**. One entry per session (`### Session: [YYYY-MM-DD HH:MM]` with **Task**, **Changes**, **Reason**, **Status** (Completed | Partial | Blocked) and **Next Session**), added at the end of every session together with the AGENTS.md Section 16 SUMMARY. New entries go directly below the section heading, newest first; the bracketed template entry stays at the bottom of each section as the format reference. Owner decisions (2026-11-27): workflow integration is written into the two agent role prompts (`.opencode/prompts/frontend.md`, `.opencode/prompts/backend.md`); `opencode.json` is normally changed by the owner, never by an agent (one explicit owner-authorised exception on 2026-11-27, recorded under Impact below); the AGENTS.md wording is delivered as the Section 19 proposal below and pasted by the owner.
