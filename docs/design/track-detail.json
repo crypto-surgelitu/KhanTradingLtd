@@ -1,0 +1,19 @@
+{
+  "name": "projects/2730876000992488484/screens/b445b10283af470f9d3411acbdfa7c39",
+  "title": "Track Your Purchase: Detail — KHANS TRADING Ltd (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "6290",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/files/3861750651677168568",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/3861750651677168568:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/files/9333770086458232391",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/9333770086458232391:download",
+    "mimeType": "image/jpeg"
+  },
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen b445b10283af470f9d3411acbdfa7c39. Full text content, image URLs and the updates-feed markup extracted from the htmlCode file via the Stitch MCP download_file tool. Two photos (vehicle, concierge headshot) downloaded and converted to WebP in public/images/track-detail/; the two logo marks are served from public/brand/. As with the Lookup screen, the export's footer variant and its literal operating-hours line were not adopted: DESIGN.md Section 5.2 requires the shared footer and business hours come from src/config/site.ts."
+}

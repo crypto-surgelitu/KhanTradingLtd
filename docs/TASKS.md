@@ -4,6 +4,13 @@ Handoffs between agents follow AGENTS.md Section 11 formats. Newest entries firs
 
 ---
 
+NEEDS-BACKEND: Verified tracker session data + client actions (uploads, notifications)
+Screen / component: `src/app/(public)/track/[id]/page.tsx` + `src/features/tracking/components/*` (DESIGN.md Screen 6B)
+Data needed: verified-session read model — deal summary, stage timeline with timestamps, current-step explanation fields, document checklist with statuses/reject reasons, issued documents (signed URLs), updates feed, payments ledger + financing, notification prefs. The SAMPLE shapes live in `src/features/tracking/mocks.ts` (`trackSummary`, `trackStages`, `trackCurrentStep`, `trackDocuments`, `trackIssuedDocuments`, `trackUpdates`, `trackPayments`, `trackNotificationChannels`)
+Actions needed: `getTrackerDetail(reference)` (session-gated), `uploadClientDocument(...)`, `uploadProofOfPayment(...)`, `saveNotificationPrefs(...)`; hashed OTP session, expiry, no user enumeration (AGENTS.md Section 8); personal data handling per the Kenya Data Protection Act
+Permissions: the verified tracker session only (role checks inside the actions)
+Until ready: presentational page over the labelled SAMPLE mock; `alert-settings.tsx` is the client leaf with a `TODO(KHANS TRADING Ltd / backend)` comment; uploads/downloads are designed-state buttons
+
 NEEDS-BACKEND: Purchase lookup + OTP verification
 Screen / component: `src/app/(public)/track/page.tsx` + `src/features/tracking/components/track-form.tsx` (DESIGN.md Screen 6A)
 Data needed: none read before verification (privacy rule: documents/payment details only after two-factor verification)
