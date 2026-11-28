@@ -1082,3 +1082,169 @@ export const shipmentDetail = {
   primaryAction: "Mark Arrived and Add to Stock",
   secondaryAction: "Update Shipment Stage",
 };
+
+// ---------------------------------------------------------------------------
+// Admin Settings — Payments Setup (docs/design/admin-settings-payments.json).
+// MOCK: SAMPLE configuration content from the Stitch export. The settings save
+// wiring goes in features/admin actions when the backend contract lands
+// (docs/TASKS.md, NEEDS-BACKEND: payments setup settings).
+// ---------------------------------------------------------------------------
+
+export type PaymentSettingsBank = {
+  id: string;
+  bankName: string;
+  accountName: string;
+  accountNumber: string;
+  branchCurrency: string;
+  badge: string | null;
+  badgeTone: "success" | "muted";
+  isDefault: boolean;
+};
+
+export const paymentSettingsBanks: PaymentSettingsBank[] = [
+  {
+    id: "bank-stanbic-trust",
+    bankName: "Standard Chartered Bank Kenya Limited",
+    accountName: "KHANS TRADING LTD - CLIENT TRUST ACC",
+    accountNumber: "0102030405001",
+    branchCurrency: "Westlands Branch • KSh",
+    badge: "Default for KSh Settlement",
+    badgeTone: "success",
+    isDefault: true,
+  },
+  {
+    id: "bank-stanbic-settlement",
+    bankName: "Stanbic Bank Kenya Limited",
+    accountName: "KHANS TRADING LTD - VEHICLE SETTLEMENT",
+    accountNumber: "0140029384700",
+    branchCurrency: "Chiromo Branch • USD / KSh",
+    badge: "USD / KSh Multi-Currency",
+    badgeTone: "muted",
+    isDefault: false,
+  },
+];
+
+export type PaymentMethodIcon = "transfer" | "cash" | "finance" | "mobile";
+
+export type PaymentSettingsMethod = {
+  id: string;
+  name: string;
+  description: string;
+  icon: PaymentMethodIcon;
+  enabled: boolean;
+  statusLabel: string;
+  policyRestricted?: boolean;
+};
+
+// DESIGN.md Section 8 Admin Screen F: M-Pesa is supported but off by default
+// and limited to small reservation deposits.
+export const paymentSettingsMethods: PaymentSettingsMethod[] = [
+  {
+    id: "bank-transfer",
+    name: "Bank Transfer / RTGS / Swift Wire",
+    description:
+      "Direct bank wire to Khans designated corporate accounts. Required for transactions over statutory limits.",
+    icon: "transfer",
+    enabled: true,
+    statusLabel: "Active",
+  },
+  {
+    id: "cash",
+    name: "Cash Settlement (Showroom Desk)",
+    description:
+      "Cash accepted at Nairobi showroom cashier with mandatory AML declaration and instant stamped fiscal receipt.",
+    icon: "cash",
+    enabled: true,
+    statusLabel: "Active",
+  },
+  {
+    id: "finance",
+    name: "Approved Asset Finance & Sacco Facility",
+    description:
+      "Third-party lender pre-approval letters and direct institutional disbursements.",
+    icon: "finance",
+    enabled: true,
+    statusLabel: "Active",
+  },
+  {
+    id: "mpesa",
+    name: "M-Pesa Mobile Money",
+    description:
+      "Paybill / Till integration. Restricted strictly to preliminary reservation deposits under statutory limits. Disabled by default for vehicle balances.",
+    icon: "mobile",
+    enabled: false,
+    statusLabel: "Disabled",
+    policyRestricted: true,
+  },
+];
+
+export type PaymentSettingsPartner = {
+  id: string;
+  name: string;
+  category: string;
+  tier: string | null;
+  email: string;
+  maxLtv: string;
+  turnaround: string;
+  integration: string;
+  integrationTone: "success" | "muted";
+};
+
+export const paymentSettingsPartners: PaymentSettingsPartner[] = [
+  {
+    id: "partner-stanbic",
+    name: "Stanbic Bank Kenya",
+    category: "Vehicle Asset Finance (VAF)",
+    tier: "Tier-1 Partner",
+    email: "corporate.vaf@stanbic.co.ke",
+    maxLtv: "80%",
+    turnaround: "48h",
+    integration: "API Integrated",
+    integrationTone: "success",
+  },
+  {
+    id: "partner-ncba",
+    name: "NCBA Bank Kenya",
+    category: "Asset Finance",
+    tier: "Tier-1 Partner",
+    email: "assetfinance@ncbagroup.com",
+    maxLtv: "80%",
+    turnaround: "24h",
+    integration: "API Integrated",
+    integrationTone: "success",
+  },
+  {
+    id: "partner-im",
+    name: "I&M Bank Kenya",
+    category: "Commercial & Executive Auto Loans",
+    tier: null,
+    email: "autoloans@imbank.co.ke",
+    maxLtv: "75%",
+    turnaround: "48h",
+    integration: "Manual Desk",
+    integrationTone: "muted",
+  },
+  {
+    id: "partner-sacco",
+    name: "Stima Sacco / Harambee Sacco",
+    category: "Member Vehicle Scheme",
+    tier: null,
+    email: "assetfinance@stima-sacco.com",
+    maxLtv: "85%",
+    turnaround: "72h",
+    integration: "Direct Letter of Undertaking",
+    integrationTone: "muted",
+  },
+];
+
+export type PaymentSettingsOption = {
+  value: string;
+  label: string;
+};
+
+export const paymentSettingsRefundWindows: PaymentSettingsOption[] = [
+  { value: "24h", label: "Within 24 business hours (RTGS)" },
+  { value: "48h", label: "Within 48 business hours (Direct Wire)" },
+  { value: "same-day", label: "Same business day (Subject to Manager Override)" },
+  { value: "custom", label: "[Custom banking arrangement]" },
+];

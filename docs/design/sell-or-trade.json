@@ -1,0 +1,29 @@
+{
+  "name": "projects/2730876000992488484/screens/f1b377597d6d4865b765f8771248ab62",
+  "title": "Sell or Trade In — KHANS TRADING Ltd (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "8544",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/files/f1b377597d6d4865b765f8771248ab62:download",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/f1b377597d6d4865b765f8771248ab62:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/screens/f1b377597d6d4865b765f8771248ab62/fileEntries/screenshot",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/screenshot_0006612d94e956be023bd9b9a908d748:download",
+    "mimeType": "image/png"
+  },
+  "images": [
+    {
+      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuB4DqQyDE59JMU2DMBWg05h-msGQj1XZe_j32P2FNC7VCbJI0vCg3fd_jTwj_qZa7TspwZZTFLGYfFpuehDf_qiB839CnD2oflcU3x48P3s4ChFhMDqYcJK3_gcJnHiKqdJuCyMs6aW-WNP6_vpxk-ajLbf9wmbWOFSP8SfCG689w88LWDgs7xgy9T4lteZ_Er8R0jjIkoRhCtUZnr60gztzdjoLlYR0HMcpb2vdYeKwpJ5o3YZzDsm",
+      "role": "header logo (not downloaded; served from public/brand/ per AGENTS.md Section 6)"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/aida/ALJJyrCWOuut0PB--NcUrG6A0zbyq2dVRGTp-7uWVQXSbePuAArGrGvIRj_INLAb7zsgzW5ghmaEvbB_djfbnj8785LWrT8vSIf3WI3CTPMX-q247abBLzqpRrad_90pzyYbiiOkfK3EU06Ou7vSJBzs81hzEp4_yKfg3b9kXBSlN2JS30ECWKrOQa635kO4of_6CuO5Z8DRLEhkLTgzXmR9LxvZA1CFg2sjfphVt_2jdfafHOaBq_78GeeZtSM",
+      "role": "footer logo (not downloaded; served from public/brand/ per AGENTS.md Section 6)"
+    }
+  ],
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen f1b377597d6d4865b765f8771248ab62. Full text content and image URLs extracted from the htmlCode file via the Stitch MCP download_file tool. IMPORTANT: this export contains NO content imagery - its only image URLs are the shared header and footer logo bitmaps, which are served from public/brand/ (AGENTS.md Section 6) instead of being downloaded, so nothing was written to public/images/sell-or-trade/ and no sharp conversion ran (no images to convert; nothing was fabricated to fill the folder). The screen is the Sell or Trade In public screen (DESIGN.md Section 6, Screen 9): breadcrumb, hero with a 3-step process strip, the valuation form (Sections A-F: intent & trade preference, vehicle information, photo upload, expected price, contact details, consent & submit) beside a sticky valuation-standards sidebar, and a preview of the valuation-request confirmation state. All form option lists and sample values are the export's clearly-labelled SAMPLE content and live in src/features/trade-in/mocks.ts."
+}

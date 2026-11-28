@@ -1,0 +1,25 @@
+{
+  "name": "projects/2730876000992488484/screens/eddf8c9ad8bb4cb888873e26b157bfd2",
+  "title": "Admin Settings — Payments Setup — KHANS TRADING Ltd (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "6060",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/files/eddf8c9ad8bb4cb888873e26b157bfd2:download",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/eddf8c9ad8bb4cb888873e26b157bfd2:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/screens/eddf8c9ad8bb4cb888873e26b157bfd2/fileEntries/screenshot",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/screenshot_0006612dbbf0f46105f1035d3a053ad3:download",
+    "mimeType": "image/png"
+  },
+  "images": [
+    {
+      "url": "https://lh3.googleusercontent.com/aida/ALJJyrCWOuut0PB--NcUrG6A0zbyq2dVRGTp-7uWVQXSbePuAArGrGvIRj_INLAb7zsgzW5ghmaEvbB_djfbnj8785LWrT8vSIf3WI3CTPMX-q247abBLzqpRrad_90pzyYbiiOkfK3EU06Ou7vSJBzs81hzEp4_yKfg3b9kXBSlN2JS30ECWKrOQa635kO4of_6CuO5Z8DRLEhkLTgzXmR9LxvZA1CFg2sjfphVt_2jdfafHOaBq_78GeeZtSM",
+      "role": "sidebar logo (not downloaded; the admin shell serves the logo from public/brand/ per AGENTS.md Section 6)"
+    }
+  ],
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen eddf8c9ad8bb4cb888873e26b157bfd2. Full text content and image URLs extracted from the htmlCode file via the Stitch MCP download_file tool. IMPORTANT: this export contains NO content imagery - its only image URL is the shared sidebar logo bitmap, served from public/brand/logo-white.png by the shared AdminShell (AGENTS.md Section 6) instead of being downloaded, so nothing was written to public/images/admin-settings-payments/ and no sharp conversion ran (no images to convert; nothing was fabricated to fill the folder). The screen is the Admin Settings - Payments Setup screen (DESIGN.md Section 8 Admin Screen F): admin shell, breadcrumb + system-status pill, settings header with Revert/Save actions, a sticky settings sub-navigation (Payments setup active) with an audit-logging note, and the payments panel (bank accounts shown to clients, enabled payment method toggles with M-Pesa off by default, reservation & commitment policy fields, financing partners) plus a sticky action footer. All bank/partner/policy values are the export's clearly-labelled SAMPLE content and live in src/features/admin/mocks.ts."
+}

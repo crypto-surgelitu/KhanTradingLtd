@@ -4,6 +4,20 @@ Handoffs between agents follow AGENTS.md Section 11 formats. Newest entries firs
 
 ---
 
+NEEDS-BACKEND: Payments setup settings (bank accounts, methods, policy, partners)
+Screen / component: `src/app/(admin)/admin/settings/payments/page.tsx` + `src/features/admin/components/payment-settings-form.tsx` (DESIGN.md Section 8 Admin Screen F)
+Data needed: the payments setup configuration — bank accounts shown to clients (incl. default flag), enabled payment methods (M-Pesa off by default), reservation hold period, commitment deposit, refund processing window, supervisor-extension rule, and financing partners (LTV, turnaround, integration status). SAMPLE values live in `src/features/admin/mocks.ts` (`paymentSettingsBanks`, `paymentSettingsMethods`, `paymentSettingsPartners`, `paymentSettingsRefundWindows`)
+Actions needed: `getPaymentSettings()`, `savePaymentSettings(input)` (Zod-validated), `upsertBankAccount`, `removeBankAccount`, `setDefaultBankAccount`, `togglePaymentMethod`, `upsertFinancingPartner`, `removeFinancingPartner` — audit-logged (fiscal settlement policy per DESIGN.md) and role-gated
+Permissions: owner and manager (write); accounts read-only; enforced server-side per AGENTS.md Section 8
+Until ready: presentational form; switches hold local UI state and the save button shows its loading state awaiting the real action (TODO comments in `payment-settings-form.tsx`)
+
+NEEDS-BACKEND: Valuation request submission (sell or trade in) + photo upload
+Screen / component: `src/app/(public)/sell-or-trade/page.tsx` + `src/features/trade-in/components/trade-in-form.tsx` (DESIGN.md Section 6 Screen 9)
+Data needed: form option lists (makes, years, logbook statuses) from lookups/settings, and the valuation-request record (intent + optional trade target, vehicle info, transmission/fuel, condition rating, logbook status, expected price, contact details, preferred response channel, uploaded photos)
+Actions needed: `submitValuationRequest(input)` (Zod-validated, rate-limited and Turnstile-protected per AGENTS.md Section 8) returning the confirmation reference, and `uploadValuationPhoto(file)` (type/size/file-signature validated, private bucket) — typed `{ ok: true, data } | { ok: false, error }` results per AGENTS.md Section 7
+Permissions: public form; submissions visible to owner, manager and sales
+Until ready: presentational form with correct semantic markup; option lists and the sample upload queue live in `src/features/trade-in/mocks.ts`; TODO comments mark the submission and upload wiring boundaries in `trade-in-form.tsx`
+
 NEEDS-BACKEND: Comparison selection + vehicle spec query
 Screen / component: `src/app/(public)/compare/page.tsx` + `src/features/compare/components/compare-controls.tsx` (DESIGN.md Section 6 Screen 8)
 Data needed: the visitor's comparison selection (max 3 vehicles, order preserved), the per-vehicle comparison payload (card fields plus the 16 spec values in the 3 groups per `CompareSpecGroup` in `src/features/compare/mocks.ts`), and recommended suggestions
