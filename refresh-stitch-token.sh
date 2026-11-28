@@ -1,19 +1,14 @@
 #!/bin/bash
-echo "Fetching fresh Stitch OAuth token..."
+set -e
 TOKEN=$(gcloud auth application-default print-access-token)
-
-if [ -z "$TOKEN" ]; then
-  echo "ERROR: Failed to get token. Run 'gcloud auth application-default login' first."
-  exit 1
-fi
-
-# Update opencode.json with the new token
-node -e "
-const fs = require('fs');
-const config = JSON.parse(fs.readFileSync('opencode.json', 'utf8'));
-config.mcp.servers.stitch.headers['X-Goog-Api-Key'] = '$TOKEN';
-fs.writeFileSync('opencode.json', JSON.stringify(config, null, 2));
-console.log('Token updated in opencode.json');
-"
-
-echo "Done. You can now run 'oc-fe'."
+[ -n "$TOKEN" ] || { echo "ERROR: empty token"; exit 1; }
+STITCH_TOKEN="$TOKEN" node -e '
+const fs=require("fs");
+const cfg=JSON.parse(fs.readFileSync("opencode.json","utf8"));
+let hits=0;
+(function walk(o){if(!o||typeof o!=="object")return;for(const k in o){if(k==="Authorization"&&typeof o[k]==="string"){o[k]="Bearer "+process.env.STITCH_TOKEN;hits++;}else walk(o[k]);}})(cfg);
+if(hits===0){console.error("ERROR: no Authorization header");process.exit(1);}
+fs.writeFileSync("opencode.json",JSON.stringify(cfg,null,2));
+console.log("Refreshed "+hits+" header(s): "+process.env.STITCH_TOKEN.slice(0,8)+"...");
+'
+echo "Done. Run: oc-fe"

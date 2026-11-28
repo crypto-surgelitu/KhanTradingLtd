@@ -536,3 +536,549 @@ export const customerDetailPreferences = {
 export const customerDetailDpa = {
   consentDate: "Nov 28, 2024",
 } as const;
+
+// ---------------------------------------------------------------------------
+// MOCK: Admin Vehicle Costing & Profit sample data — the clearly-labelled
+// SAMPLE content of the Stitch export (docs/design/admin-costing.json), per
+// DESIGN.md Section 0.7 and AGENTS.md Section 2.4. Figures, names, refs and
+// suppliers are fictional design content, not real business data. Replace
+// with costing queries (DESIGN.md Section 8, Admin Screen L) when the backend
+// contract lands.
+
+export type CostingMarginTone = "success" | "warning" | "danger";
+
+export type CostingStat = {
+  label: string;
+  icon: "wallet" | "trending" | "pie" | "banknote";
+  value: string;
+  valueTone?: "success";
+  suffix?: string;
+  trend?: string;
+  lead?: string;
+  note: string;
+  noteDot?: boolean;
+  dark?: boolean;
+  bar: "slate" | "champagne" | "success";
+};
+
+export const costingStats: CostingStat[] = [
+  {
+    label: "Total Stock Landed Cost", icon: "wallet", value: "KSh 148,650,000",
+    lead: "28 Units", note: "22 in showroom, 6 in transit / port", bar: "slate",
+  },
+  {
+    label: "Projected Portfolio Profit", icon: "trending", value: "KSh 22,480,000",
+    trend: "+8.2%", note: "vs target pricing baseline", bar: "champagne",
+  },
+  {
+    label: "Weighted Avg Margin", icon: "pie", value: "15.1%", valueTone: "success",
+    suffix: "gross yield", note: "Optimal corridor (Bench: 12.0% – 18.0%)",
+    noteDot: true, bar: "success",
+  },
+  {
+    label: "Realized Margin (Nov 2024)", icon: "banknote", value: "KSh 4,820,000",
+    lead: "4 Settled Deals", note: "+18.4% vs Oct", dark: true, bar: "champagne",
+  },
+];
+
+export const costingStatusOptions = [
+  "Status: All (28)",
+  "In Stock (18)",
+  "Reserved (4)",
+  "Incoming / Port (4)",
+  "Sold (2)",
+] as const;
+
+export const costingOriginOptions = [
+  "Origin: All Sourcing",
+  "Japan USS Auction",
+  "UK Franchise Direct",
+  "Local Consignment",
+] as const;
+
+export type CostingYieldBand = {
+  id: "all" | "healthy" | "thin" | "critical";
+  label: string;
+  dot?: "success" | "warning" | "danger";
+};
+
+export const costingYieldBands: CostingYieldBand[] = [
+  { id: "all", label: "All Units (28)" },
+  { id: "healthy", label: "Healthy ≥12% (19)", dot: "success" },
+  { id: "thin", label: "Thin 5-11% (7)", dot: "warning" },
+  { id: "critical", label: "Sub-5% / Critical (2)", dot: "danger" },
+];
+
+export type CostingRow = {
+  title: string;
+  stockRef: string;
+  origin: string;
+  days: string;
+  landed: string;
+  asking: string;
+  profit: string;
+  margin: string;
+  marginTone: CostingMarginTone;
+  status: string;
+  statusTone: StatusTone;
+  action: string;
+  image: string;
+  imageAlt: string;
+  active?: boolean;
+};
+
+export const costingRows: CostingRow[] = [
+  {
+    title: "2019 Toyota LC Prado TZ-G", stockRef: "KT-PRD-19", origin: "USS Tokyo 4492",
+    days: "12d", landed: "6,485,000", asking: "7,650,000", profit: "+1,165,000",
+    margin: "15.2%", marginTone: "success", status: "Reserved", statusTone: "warning",
+    action: "Open Sheet", image: "/images/admin-costing/vehicle-prado-tzg.webp",
+    imageAlt: "Front three-quarter studio portrait of a 2019 Toyota Land Cruiser Prado TZ-G in pearl white finish with chrome accents, architectural soft cinematic lighting in an executive Nairobi showroom with soft neutral reflections.",
+    active: true,
+  },
+  {
+    title: "2021 Land Cruiser 300 ZX", stockRef: "KT-LC3-04", origin: "Kobe Port Unit",
+    days: "22d", landed: "17,200,000", asking: "19,800,000", profit: "+2,600,000",
+    margin: "13.1%", marginTone: "success", status: "In Stock", statusTone: "success",
+    action: "View Sheet", image: "/images/admin-costing/vehicle-lc300-zx.webp",
+    imageAlt: "Editorial profile of a 2021 Toyota Land Cruiser 300 ZX in metallic black obsidian parked on polished dark concrete inside luxury motor showroom, dramatic rim lighting on sculpted body panels.",
+  },
+  {
+    title: "2020 Mercedes GLE 300d AMG", stockRef: "KT-MBG-11", origin: "BCA UK Direct",
+    days: "45d", landed: "9,150,000", asking: "10,200,000", profit: "+1,050,000",
+    margin: "10.3%", marginTone: "warning", status: "In Stock", statusTone: "success",
+    action: "View Sheet", image: "/images/admin-costing/vehicle-mercedes-gle-300d.webp",
+    imageAlt: "Modern 2020 Mercedes-Benz GLE 300d AMG Line in selenite grey metallic studio shot with subtle champagne gradient background reflections, precision luxury automotive design.",
+  },
+  {
+    title: "2020 Lexus LX570 Supercharger", stockRef: "KT-LX5-02", origin: "USS Nagoya #102",
+    days: "18d", landed: "15,800,000", asking: "18,200,000", profit: "+2,400,000",
+    margin: "13.2%", marginTone: "success", status: "Reserved", statusTone: "warning",
+    action: "View Sheet", image: "/images/admin-costing/vehicle-lexus-lx570.webp",
+    imageAlt: "2020 Lexus LX570 V8 Supercharger in sonic titanium finish parked inside high-end glass architectural pavilion with crisp morning illumination highlighting aggressive spindle grille.",
+  },
+  {
+    title: "2018 Porsche Cayenne Turbo", stockRef: "KT-PCH-07", origin: "High Days Flag",
+    days: "88d", landed: "8,900,000", asking: "9,250,000", profit: "+350,000",
+    margin: "3.8%", marginTone: "danger", status: "In Stock", statusTone: "success",
+    action: "View Sheet", image: "/images/admin-costing/vehicle-porsche-cayenne-turbo.webp",
+    imageAlt: "2018 Porsche Cayenne Turbo in moonlight blue metallic, professional low-angle perspective showing 21-inch RS Spyder design alloy wheels and ceramic brakes.",
+  },
+  {
+    title: "2021 Toyota Harrier G Leather", stockRef: "KT-HAR-15", origin: "Mombasa CFS Clearing",
+    days: "8d", landed: "4,450,000", asking: "5,200,000", profit: "+750,000",
+    margin: "14.4%", marginTone: "success", status: "Incoming", statusTone: "info",
+    action: "View Sheet", image: "/images/admin-costing/vehicle-harrier-g.webp",
+    imageAlt: "2021 Toyota Harrier G Leather package crossover SUV in dark steel gray with sleek LED signature tail bar, sharp architectural lighting highlights.",
+  },
+  {
+    title: "2018 Mercedes-Benz E250 AMG", stockRef: "KT-E25-01", origin: "Settled 21 Nov",
+    days: "31d", landed: "4,380,000", asking: "5,200,000", profit: "+820,000",
+    margin: "15.8%", marginTone: "success", status: "Sold", statusTone: "muted",
+    action: "View Sheet", image: "/images/admin-costing/vehicle-mercedes-e250.webp",
+    imageAlt: "2018 Mercedes-Benz E250 AMG Line executive saloon sedan in polar white, clean frontal dynamic studio lighting on diamond radiator grille.",
+  },
+];
+
+export const costingPagination = {
+  from: 1, to: 7, total: 28, current: 1, pages: [1, 2, 3, 4] as const,
+};
+
+export type CostingLineItem = {
+  index: number;
+  title: string;
+  note: string;
+  verified?: boolean;
+  amount: string;
+  date: string;
+  attachment: string;
+  reference: string;
+};
+
+export const costingSheet = {
+  ref: "#KT-PRD-19",
+  status: "Reserved",
+  statusTone: "warning" as StatusTone,
+  days: "12 Days in Stock",
+  title: "Cost Sheet: 2019 Toyota Prado TZ-G",
+  source: "Sourced: USS Tokyo Lot #4492",
+  vin: "VIN: GDJ150-008219",
+  audited: "Fully Audited CIF",
+  yield: {
+    landed: "KSh 6,485,000",
+    asking: "KSh 7,650,000",
+    margin: "15.2%",
+    marginChip: "Healthy",
+    profit: "+KSh 1,165,000",
+    breakevenLabel: "Min break-even with 5% reserve:",
+    breakeven: "KSh 6,810,000",
+  },
+  fx: {
+    symbol: "¥",
+    title: "Foreign Exchange Lock",
+    detail: "JPY → KES @ 0.885 · Stanbic Treasury Desk",
+    locked: "Locked: 12 Nov 2024",
+  },
+  itemCount: 10,
+  itemsNote: "All amounts in KES equivalent",
+  audit: {
+    title: "Audited & Locked by Accounts",
+    detail: "Grace Wanjiku (Lead Auditor) · Nov 29, 2024 16:40 EAT",
+    locked: true,
+  },
+};
+
+export const costingLineItems: CostingLineItem[] = [
+  { index: 1, title: "Purchase Price (Auction Hammer)", note: "USS Tokyo Lot #4492 · ¥4,250,000", amount: "KSh 3,761,250", date: "12 Nov 2024", attachment: "USS_Invoice_4492.pdf", reference: "INV-TYO-9981" },
+  { index: 2, title: "Auction & Export Agent Fees", note: "Autocom Japan Export Handling · ¥110,000", amount: "KSh 97,350", date: "14 Nov 2024", attachment: "Agent_Fee_092.pdf", reference: "ACJ-EXP-088" },
+  { index: 3, title: "Ocean Freight & Shipping (RORO)", note: "Yokohama to Mombasa · $1,650 @ 130 KES", amount: "KSh 214,500", date: "18 Nov 2024", attachment: "BillOfLading_HGH9921.pdf", reference: "BL: HGH-9921" },
+  { index: 4, title: "Marine Cargo Insurance", note: "Jubilee Marine Institute Cargo Cover", amount: "KSh 42,000", date: "19 Nov 2024", attachment: "Ins_Cert_MAR88.pdf", reference: "POL-MAR-2024-88" },
+  { index: 5, title: "Import Duties & Taxes (KRA CRSP)", note: "Customs Entry #C24-NBO-88190 · Duty, VAT, IDF, RDL", verified: true, amount: "KSh 1,985,000", date: "24 Nov 2024", attachment: "KRA_Payment_Slip_88190.pdf", reference: "Cleared at Mombasa" },
+  { index: 6, title: "Port Handling & CFS Charges", note: "Mitchell Cotts CFS Wharfage, Shore Handling", amount: "KSh 85,000", date: "26 Nov 2024", attachment: "CFS_Voucher_MC90.pdf", reference: "CFS-N-4412" },
+  { index: 7, title: "Transport to Showroom (Carrier)", note: "Trans-East Haulage · Enclosed Low-loader", amount: "KSh 35,000", date: "27 Nov 2024", attachment: "Waybill_992.pdf", reference: "WB-992-MSA" },
+  { index: 8, title: "Mechanical & Reconditioning", note: "Ceramic coating, leather feed, OBD health check", amount: "KSh 185,000", date: "28 Nov 2024", attachment: "Recond_WorkOrder.pdf", reference: "WO-KHAN-402" },
+  { index: 9, title: "Registration & NTSA TIMS Plates", note: "Plate issuance: KDH 442T & Logbook endorsement", amount: "KSh 45,000", date: "28 Nov 2024", attachment: "NTSA_Invoice_Plates.pdf", reference: "TIMS-REG-882" },
+  { index: 10, title: "Showroom Prep & Sundry", note: "Full fuel tank handover, battery tender staging", amount: "KSh 34,900", date: "29 Nov 2024", attachment: "PettyCash_Voucher_41.pdf", reference: "PC-41" },
+];
+
+// DESIGN.md Section 7.3 vehicle cost categories (editable in Admin Settings).
+export const costingCategories = [
+  "Purchase price",
+  "Auction or agent fees",
+  "Freight and shipping",
+  "Insurance",
+  "Duty and taxes",
+  "Clearing and port charges",
+  "Transport to showroom",
+  "Repairs and reconditioning",
+  "Registration and licensing",
+  "Other",
+] as const;
+
+// ---------------------------------------------------------------------------
+// MOCK: Admin Shipments sample data — the clearly-labelled SAMPLE content of
+// the Stitch export (docs/design/admin-shipments.json), per DESIGN.md Section
+// 0.7 and AGENTS.md Section 2.4. Figures, refs, vessels and suppliers are
+// fictional design content, not real business data. Replace with shipment
+// queries (DESIGN.md Section 8, Admin Screen M) when the backend contract
+// lands. Board stage names follow DESIGN.md Section 7.2.
+
+export type ShipmentTextTone = "ink" | "slate" | "mist" | "success" | "warning" | "danger" | "info" | "champagne-dark";
+export type ShipmentChipTone = "slate" | "warning" | "info" | "champagne";
+export type ShipmentCardIcon = "pin" | "receipt" | "clock" | "file" | "check" | "warehouse" | "ship" | "gavel";
+
+export type ShipmentStat = {
+  label: string;
+  icon: "ship" | "anchor" | "history" | "receipt";
+  value: string;
+  bar: "champagne" | "info" | "slate" | "champagne-dark";
+  iconChip: "champagne" | "info" | "graphite" | "tint";
+  lead: string;
+  leadTone: ShipmentTextTone;
+  leadIcon?: "trending" | "clock";
+  note: string;
+  noteTone?: "success";
+};
+
+export const shipmentStats: ShipmentStat[] = [
+  { label: "In Transit (Ocean)", icon: "ship", value: "4 Vessels · 8 Units", bar: "champagne", iconChip: "champagne", lead: "2 arriving", leadTone: "success", leadIcon: "trending", note: "within next 72 hours" },
+  { label: "At Mombasa Port / CFS", icon: "anchor", value: "3 Units (Clearing)", bar: "info", iconChip: "info", lead: "1 CFS Pending", leadTone: "warning", leadIcon: "clock", note: "Free days expire in 48h" },
+  { label: "Avg Transit Duration", icon: "history", value: "34 Days", bar: "slate", iconChip: "graphite", lead: "Yokohama & Kobe to MSA", leadTone: "slate", note: "(-2d vs avg)", noteTone: "success" },
+  { label: "Landed Duty Pending", icon: "receipt", value: "KSh 12,450,000", bar: "champagne-dark", iconChip: "tint", lead: "2 Escrow Approvals", leadTone: "danger", note: "required today" },
+];
+
+export const shipmentFilterOptions = {
+  searchPlaceholder: "Filter by VIN, vessel, lot #...",
+  origins: ["All Origins (16)", "Japan · USS / TAA (12)", "United Kingdom · BCA (4)"],
+  carriers: ["All Carriers", "Mitsui O.S.K. (MOL)", "NYK RORO", "Maersk Container Line", "Toyofuji / Trans Future"],
+  delayedLabel: "Delayed Only (2)",
+  showingCount: "16 units",
+  showingNote: "in pipeline",
+  batchLabel: "Batch FY24-Q4",
+  feedLabel: "KRA Simba & Kilindini Port Live Feed",
+  feedUpdated: "Updated 12 mins ago",
+} as const;
+
+export type ShipmentFooter =
+  | {
+      kind: "split";
+      left: string;
+      leftIcon?: ShipmentCardIcon;
+      leftTone?: ShipmentTextTone;
+      right: string;
+      rightTone?: ShipmentTextTone;
+    }
+  | {
+      kind: "progress";
+      vessel: string;
+      track: string;
+      pctLabel: string;
+      pct: number;
+      barWidthClass: "w-3/4" | "w-7/8" | "w-2/3";
+      bar: "warning" | "info";
+    };
+
+export type ShipmentCard = {
+  id: string;
+  chip: string;
+  chipTone: ShipmentChipTone;
+  chipIcon?: ShipmentCardIcon;
+  date: string;
+  dateTone?: ShipmentTextTone;
+  title: string;
+  sub: string;
+  image: string;
+  imageW: number;
+  imageH: number;
+  imageAlt: string;
+  footer: ShipmentFooter;
+};
+
+export type ShipmentColumn = {
+  stage: string;
+  dot: "slate" | "info" | "champagne" | "champagne-dark" | "success";
+  count: number;
+  active?: boolean;
+  cards: ShipmentCard[];
+};
+
+export const shipmentBoard: ShipmentColumn[] = [
+  {
+    stage: "1. Purchased", dot: "slate", count: 2,
+    cards: [
+      {
+        id: "s-prado-70th", chip: "USS Tokyo #9120", chipTone: "slate", date: "18 Nov",
+        title: "2022 Land Cruiser Prado", sub: "TX-L 70th Anniv · 2.8L",
+        image: "/images/admin-shipments/vehicle-prado-tx-l-70th.webp", imageW: 512, imageH: 279,
+        imageAlt: "2022 Toyota Land Cruiser Prado TX-L 70th Anniversary edition in pearl white exterior, studio angled 3/4 shot with warm daylight reflections and luxury finish",
+        footer: { kind: "split", left: "Auction Staged", leftIcon: "pin", right: "¥7,450,000", rightTone: "ink" },
+      },
+      {
+        id: "s-gle-400d", chip: "BCA UK #C-902", chipTone: "slate", date: "20 Nov",
+        title: "2021 Mercedes-Benz GLE 400d", sub: "AMG Line · Premium Plus",
+        image: "/images/admin-shipments/vehicle-gle-400d.webp", imageW: 512, imageH: 279,
+        imageAlt: "2021 Mercedes Benz GLE 400d AMG Line in Obsidian Black metallic finish, luxury side profile shot in architectural garage setting",
+        footer: { kind: "split", left: "Payment Confirmed", leftIcon: "receipt", right: "£44,200", rightTone: "ink" },
+      },
+    ],
+  },
+  {
+    stage: "2. Export Docs", dot: "slate", count: 2,
+    cards: [
+      {
+        id: "s-rx450h", chip: "QISJ Inspection", chipTone: "slate", date: "Yokohama Port",
+        title: "2020 Lexus RX450h F-Sport", sub: "VIN: GYL25-01449",
+        image: "/images/admin-shipments/vehicle-rx450h-fsport.webp", imageW: 512, imageH: 279,
+        imageAlt: "2020 Lexus RX450h F-Sport in Sonic Titanium metallic paint with dark graphite alloy wheels, dynamic outdoor studio car portrait",
+        footer: { kind: "split", left: "JEVIC Translation", leftIcon: "clock", right: "Ready in 2d", rightTone: "ink" },
+      },
+      {
+        id: "s-rangerover-sport", chip: "Southampton Docks", chipTone: "slate", date: "V5C Cleared",
+        title: "2021 Range Rover Sport", sub: "Autobiography Dynamic D300",
+        image: "/images/admin-shipments/vehicle-range-rover-sport.webp", imageW: 512, imageH: 286,
+        imageAlt: "2021 Range Rover Sport Autobiography Dynamic in Carpathian Grey with black roof and red brake calipers, parked in an upscale urban setting",
+        footer: { kind: "split", left: "EAA Certified", leftIcon: "check", right: "Awaiting RORO slot", rightTone: "ink" },
+      },
+    ],
+  },
+  {
+    stage: "3. Shipped (In Transit)", dot: "info", count: 3,
+    cards: [
+      {
+        id: "s-defender", chip: "5d Delayed", chipTone: "warning", chipIcon: "clock", date: "ETA: 02 Dec",
+        title: "2022 Defender 110 D250", sub: "X-Dynamic SE · UK Export",
+        image: "/images/admin-shipments/vehicle-defender-110-d250.webp", imageW: 512, imageH: 279,
+        imageAlt: "2022 Land Rover Defender 110 X-Dynamic in Pangea Green with white contrast roof and rugged off-road tires, dramatic cinematic lighting",
+        footer: { kind: "progress", vessel: "Vessel: MV GRANDE NIGERIA", track: "Red Sea diversion", pctLabel: "78% Voyage", pct: 78, barWidthClass: "w-3/4", bar: "warning" },
+      },
+      {
+        id: "s-harrier", chip: "On Schedule", chipTone: "info", date: "ETA: 05 Dec",
+        title: "2021 Toyota Harrier G", sub: "2.0L Petrol · Leather Pkg",
+        image: "/images/admin-shipments/vehicle-harrier-g.webp", imageW: 512, imageH: 279,
+        imageAlt: "2021 Toyota Harrier G-Leather Package in Pearl White with sleek daytime running LED lights, shot in high contrast architectural lighting",
+        footer: { kind: "progress", vessel: "Vessel: MV TRANS HARMONY 1", track: "Indian Ocean Transit", pctLabel: "88% Voyage", pct: 88, barWidthClass: "w-7/8", bar: "info" },
+      },
+      {
+        id: "s-lx570", chip: "On Schedule", chipTone: "info", date: "ETA: 08 Dec",
+        title: "2020 Lexus LX570 Superior", sub: "5.7L V8 · 8-Speed Auto",
+        image: "/images/admin-shipments/vehicle-lexus-lx570.webp", imageW: 512, imageH: 279,
+        imageAlt: "2020 Lexus LX570 Superior in Deep Onyx Black with chrome spindle grille, ultra luxury full size SUV exterior profile",
+        footer: { kind: "progress", vessel: "Cont: MSKU-982104", track: "Approaching Colombo", pctLabel: "65% Voyage", pct: 65, barWidthClass: "w-2/3", bar: "info" },
+      },
+    ],
+  },
+  {
+    stage: "4. Arrived at Port", dot: "champagne", count: 2, active: true,
+    cards: [
+      {
+        id: "s-lc300", chip: "Kilindini Berth 1-2", chipTone: "champagne", date: "Docked 27 Nov", dateTone: "ink",
+        title: "2021 Land Cruiser 300 ZX", sub: "KT-LC3-04 · 3.3L Diesel",
+        image: "/images/admin-shipments/vehicle-lc300-zx.webp", imageW: 512, imageH: 279,
+        imageAlt: "2021 Toyota Land Cruiser 300 ZX in Pearl White, flagship Japanese luxury offroader parked on showroom floor with subtle studio lighting",
+        footer: { kind: "split", left: "MV TRANS FUTURE 7", leftIcon: "ship", right: "KSh 19.8M", rightTone: "ink" },
+      },
+      {
+        id: "s-bmw-x5", chip: "Mombasa CFS Yard 4", chipTone: "slate", date: "Docked 26 Nov",
+        title: "2020 BMW X5 xDrive30d", sub: "M Sport Package · G05",
+        image: "/images/admin-shipments/vehicle-bmw-x5.webp", imageW: 512, imageH: 286,
+        imageAlt: "2020 BMW X5 xDrive30d M Sport in Mineral White metallic finish with high-gloss shadowline trim and 21 inch M alloys",
+        footer: { kind: "split", left: "Discharged to CFS", leftIcon: "warehouse", right: "KSh 10.2M", rightTone: "ink" },
+      },
+    ],
+  },
+  {
+    stage: "5. Customs Clearance", dot: "champagne-dark", count: 2,
+    cards: [
+      {
+        id: "s-cayenne", chip: "CRSP Assessment", chipTone: "slate", chipIcon: "gavel", date: "Day 3 of CFS",
+        title: "2021 Porsche Cayenne Coupe", sub: "3.0L Turbo V6 · UK Import",
+        image: "/images/admin-shipments/vehicle-porsche-cayenne-coupe.webp", imageW: 512, imageH: 286,
+        imageAlt: "2021 Porsche Cayenne Coupe in Chalk Grey with 22-inch GT design wheels, editorial luxury SUV profile",
+        footer: { kind: "split", left: "Duty: KSh 4,890,000", right: "Pending Pay", rightTone: "ink" },
+      },
+      {
+        id: "s-alphard", chip: "IDF Verified", chipTone: "slate", date: "Day 2 of CFS",
+        title: "2019 Toyota Alphard", sub: "Executive Lounge 3.5L",
+        image: "/images/admin-shipments/vehicle-toyota-alphard.webp", imageW: 512, imageH: 279,
+        imageAlt: "2019 Toyota Alphard Executive Lounge in Pearl White with lounge leather reclining seats and privacy glass, VIP luxury van",
+        footer: { kind: "split", left: "Duty: KSh 2,420,000", right: "Release Order Req", rightTone: "ink" },
+      },
+    ],
+  },
+  {
+    stage: "6. Registration & NTSA", dot: "slate", count: 1,
+    cards: [
+      {
+        id: "s-prado-tx", chip: "TIMS Plate Assign", chipTone: "slate", date: "MSA Likoni",
+        title: "2021 LC Prado TX 2.8L", sub: "Plate: KD[Pending] · NTSA",
+        image: "/images/admin-shipments/vehicle-prado-tx.webp", imageW: 512, imageH: 279,
+        imageAlt: "2021 Land Cruiser Prado TX in Graphite Grey metallic, parked near port gates with safari ready specs",
+        footer: { kind: "split", left: "KRA Release Done", leftIcon: "check", right: "Carrier dispatching", rightTone: "ink" },
+      },
+    ],
+  },
+  {
+    stage: "7. Delivered to Showroom", dot: "success", count: 4,
+    cards: [
+      {
+        id: "s-hilux", chip: "Nairobi Showroom", chipTone: "slate", date: "24 Nov",
+        title: "2022 Hilux GR Sport", sub: "4WD · Ready for Inventory",
+        image: "/images/admin-shipments/vehicle-hilux-gr-sport.webp", imageW: 512, imageH: 279,
+        imageAlt: "2022 Toyota Hilux GR Sport double cab pickup truck in vibrant red and black livery, parked in immaculate Nairobi luxury dealership showroom",
+        footer: { kind: "split", left: "KDE 304M", leftTone: "ink", right: "Prepped & Detailed", rightTone: "ink" },
+      },
+      {
+        id: "s-vogue", chip: "Nairobi Showroom", chipTone: "slate", date: "22 Nov",
+        title: "2020 Range Rover Vogue", sub: "3.0L TDV6 · Live on Site",
+        image: "/images/admin-shipments/vehicle-range-rover-vogue.webp", imageW: 512, imageH: 279,
+        imageAlt: "2020 Land Rover Range Rover Vogue in Fuji White with Atlas exterior accents, immaculate condition inside pristine luxury car showroom",
+        footer: { kind: "split", left: "KDE 118X", leftTone: "ink", right: "Reserved", rightTone: "champagne-dark" },
+      },
+    ],
+  },
+];
+
+export const shipmentSelectedCardId = "s-lc300";
+
+export type ShipmentListRow = {
+  id: string;
+  reference: string;
+  vehicle: string;
+  sub: string;
+  carrier: string;
+  origin: string;
+  eta: string;
+  stage: string;
+  statusTone: StatusTone;
+  note: string;
+};
+
+export const shipmentListRows: ShipmentListRow[] = [
+  { id: "s-prado-70th", reference: "USS Tokyo #9120", vehicle: "2022 Land Cruiser Prado", sub: "TX-L 70th Anniv · 2.8L", carrier: "USS Tokyo Auction", origin: "Japan", eta: "18 Nov", stage: "Purchased", statusTone: "muted", note: "Auction Staged · ¥7,450,000" },
+  { id: "s-gle-400d", reference: "BCA UK #C-902", vehicle: "2021 Mercedes-Benz GLE 400d", sub: "AMG Line · Premium Plus", carrier: "BCA UK", origin: "United Kingdom", eta: "20 Nov", stage: "Purchased", statusTone: "muted", note: "Payment Confirmed · £44,200" },
+  { id: "s-rx450h", reference: "QISJ Inspection", vehicle: "2020 Lexus RX450h F-Sport", sub: "VIN: GYL25-01449", carrier: "Yokohama Port", origin: "Japan", eta: "—", stage: "Export Docs", statusTone: "muted", note: "JEVIC Translation · Ready in 2d" },
+  { id: "s-rangerover-sport", reference: "V5C Cleared", vehicle: "2021 Range Rover Sport", sub: "Autobiography Dynamic D300", carrier: "Southampton Docks", origin: "United Kingdom", eta: "—", stage: "Export Docs", statusTone: "muted", note: "EAA Certified · Awaiting RORO slot" },
+  { id: "s-defender", reference: "MV GRANDE NIGERIA", vehicle: "2022 Defender 110 D250", sub: "X-Dynamic SE · UK Export", carrier: "MV GRANDE NIGERIA", origin: "United Kingdom", eta: "ETA: 02 Dec", stage: "Shipped (In Transit)", statusTone: "warning", note: "5d Delayed · Red Sea diversion · 78% Voyage" },
+  { id: "s-harrier", reference: "MV TRANS HARMONY 1", vehicle: "2021 Toyota Harrier G", sub: "2.0L Petrol · Leather Pkg", carrier: "MV TRANS HARMONY 1", origin: "Japan", eta: "ETA: 05 Dec", stage: "Shipped (In Transit)", statusTone: "info", note: "On Schedule · Indian Ocean Transit · 88% Voyage" },
+  { id: "s-lx570", reference: "MSKU-982104", vehicle: "2020 Lexus LX570 Superior", sub: "5.7L V8 · 8-Speed Auto", carrier: "Maersk Container Line", origin: "Japan", eta: "ETA: 08 Dec", stage: "Shipped (In Transit)", statusTone: "info", note: "On Schedule · Approaching Colombo · 65% Voyage" },
+  { id: "s-lc300", reference: "SHP-2024-JP-109", vehicle: "2021 Land Cruiser 300 ZX", sub: "KT-LC3-04 · 3.3L Diesel", carrier: "MV TRANS FUTURE 7", origin: "Japan", eta: "Docked 27 Nov", stage: "Arrived at Port", statusTone: "info", note: "Kilindini Berth 1-2 · Asking KSh 19,800,000" },
+  { id: "s-bmw-x5", reference: "Mombasa CFS Yard 4", vehicle: "2020 BMW X5 xDrive30d", sub: "M Sport Package · G05", carrier: "—", origin: "Japan", eta: "Docked 26 Nov", stage: "Arrived at Port", statusTone: "info", note: "Discharged to CFS · KSh 10.2M" },
+  { id: "s-cayenne", reference: "CRSP Assessment", vehicle: "2021 Porsche Cayenne Coupe", sub: "3.0L Turbo V6 · UK Import", carrier: "—", origin: "United Kingdom", eta: "Day 3 of CFS", stage: "Customs Clearance", statusTone: "warning", note: "Duty: KSh 4,890,000 · Pending Pay" },
+  { id: "s-alphard", reference: "IDF Verified", vehicle: "2019 Toyota Alphard", sub: "Executive Lounge 3.5L", carrier: "—", origin: "Japan", eta: "Day 2 of CFS", stage: "Customs Clearance", statusTone: "warning", note: "Duty: KSh 2,420,000 · Release Order Req" },
+  { id: "s-prado-tx", reference: "TIMS Plate Assign", vehicle: "2021 LC Prado TX 2.8L", sub: "Plate: KD[Pending] · NTSA", carrier: "—", origin: "Japan", eta: "—", stage: "Registration & NTSA", statusTone: "muted", note: "MSA Likoni · KRA Release Done · Carrier dispatching" },
+  { id: "s-hilux", reference: "KDE 304M", vehicle: "2022 Hilux GR Sport", sub: "4WD · Ready for Inventory", carrier: "—", origin: "Japan", eta: "24 Nov", stage: "Delivered to Showroom", statusTone: "success", note: "Nairobi Showroom · Prepped & Detailed" },
+  { id: "s-vogue", reference: "KDE 118X", vehicle: "2020 Range Rover Vogue", sub: "3.0L TDV6 · Live on Site", carrier: "—", origin: "Japan", eta: "22 Nov", stage: "Delivered to Showroom", statusTone: "success", note: "Nairobi Showroom · Reserved" },
+];
+
+export type ShipmentMilestone = {
+  title: string;
+  right: string;
+  note: string;
+  state: "done" | "current" | "pending";
+  chip?: "CURRENT";
+};
+
+export const shipmentMilestones: ShipmentMilestone[] = [
+  { title: "1. Purchased", right: "18 Oct 2024", note: "USS Tokyo hammer cleared · Hammer: ¥12,800,000", state: "done" },
+  { title: "2. Export documents processing", right: "24 Oct 2024", note: "Japan export certificate & deregistration complete", state: "done" },
+  { title: "3. Shipped (in transit)", right: "02 Nov 2024", note: "Loaded on MV TRANS FUTURE 7 at Yokohama (Voyage 204)", state: "done" },
+  { title: "4. Arrived at port", right: "27 Nov 2024", note: "Docked at Kilindini Harbour, Mombasa Berths 1–2", state: "current", chip: "CURRENT" },
+  { title: "5. Customs clearance", right: "In progress", note: "KRA CRSP declaration filed; waiting tally verification", state: "pending" },
+  { title: "6. Registration and inspection", right: "Pending", note: "NTSA TIMS e-citizen plate booking & KEBS sticker", state: "pending" },
+  { title: "7. Delivered to showroom", right: "Scheduled", note: "Car carrier transport Mombasa → Nairobi Showroom", state: "pending" },
+];
+
+export type ShipmentDocument = {
+  name: string;
+  status: string;
+  statusTone: "success" | "info";
+  statusIcon: "check" | "lock" | "languages" | "badge";
+};
+
+export const shipmentDocuments: ShipmentDocument[] = [
+  { name: "Commercial Invoice (INV-TYO-9921.pdf)", status: "Verified & Authenticated", statusTone: "success", statusIcon: "check" },
+  { name: "Original Bill of Lading (BL-TF7-MSA-0492.pdf)", status: "Original Surrendered at MSA", statusTone: "info", statusIcon: "lock" },
+  { name: "Japanese Export Certificate (EXP-JAP-2024-88.pdf)", status: "Translated & Verified", statusTone: "success", statusIcon: "languages" },
+  { name: "QISJ Pre-Export Cert (QISJ-KE-99214.pdf)", status: "Approved · Roadworthy KEBS", statusTone: "success", statusIcon: "badge" },
+];
+
+export type ShipmentCostLine = {
+  label: string;
+  value: string;
+  tone?: "warning" | "champagne-dark";
+  help?: boolean;
+};
+
+export const shipmentCosts: ShipmentCostLine[] = [
+  { label: "Auction Hammer (¥12,800,000)", value: "KSh 11,328,000" },
+  { label: "Ocean Freight (RORO $2,100)", value: "KSh 273,000" },
+  { label: "Marine Cargo Insurance", value: "KSh 84,000" },
+  { label: "KRA Customs Duty & CRSP", value: "KSh 4,120,000 (Pending)", tone: "warning", help: true },
+  { label: "Port CFS & Handling", value: "KSh 78,000" },
+];
+
+export const shipmentDetail = {
+  ref: "REF: SHP-2024-JP-109",
+  stageChip: "Stage 4 of 7",
+  title: "Arrived at Port (Mombasa CFS)",
+  lotVin: "USS Tokyo Lot #8812 · VIN: FJA300-001928",
+  stockUnit: "Stock Unit KT-LC3-04",
+  kraChip: "[KRA Pending]",
+  vehicleTitle: "2021 Land Cruiser 300 ZX",
+  vehicleSub: "3.3L Twin-Turbo Diesel · Pearl White",
+  asking: "Asking KSh 19,800,000",
+  image: "/images/admin-shipments/vehicle-lc300-zx-detail.webp",
+  imageW: 512,
+  imageH: 279,
+  imageAlt: "Detailed studio photo of 2021 Toyota Land Cruiser 300 ZX in Pearl White with 20 inch wheels and chrome trim, pristine executive presentation",
+  milestonesTitle: "Logistics Milestones",
+  stageActive: "Stage 4 Active",
+  documentsTitle: "Shipment Documents (4)",
+  uploadLabel: "Upload Doc",
+  costsTitle: "Incurred & Projected Costs",
+  costsLinkLabel: "View in Costing",
+  totalLabel: "Total Landed Est.",
+  totalValue: "KSh 15,883,000",
+  primaryAction: "Mark Arrived and Add to Stock",
+  secondaryAction: "Update Shipment Stage",
+};

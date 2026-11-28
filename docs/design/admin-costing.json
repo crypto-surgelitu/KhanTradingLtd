@@ -1,0 +1,19 @@
+{
+  "name": "projects/2730876000992488484/screens/24d753148b4e43ffb67aea6040f63b50",
+  "title": "Admin Vehicle Costing & Profit — KHANS TRADING Ltd (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "3424",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/files/2485766677229268218",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/2485766677229268218:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/files/2738653523641488988",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/2738653523641488988:download",
+    "mimeType": "image/jpeg"
+  },
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen 24d753148b4e43ffb67aea6040f63b50. Full text content and image URLs extracted from the htmlCode file via the Stitch MCP download_file tool. Seven vehicle thumbnails downloaded and converted to WebP in public/images/admin-costing/; the sidebar logo asset is served from public/brand/logo-white.png. The screen is a 62% costing ledger table + 38% persistent cost-sheet drawer (10 itemized cost lines). All financial figures are the export's clearly-labelled SAMPLE content (incl. its fictional names, refs and suppliers) and live in src/features/admin/mocks.ts."
+}

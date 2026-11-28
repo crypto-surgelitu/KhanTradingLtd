@@ -3,6 +3,20 @@
 Handoffs between agents follow AGENTS.md Section 11 formats. Newest entries first.
 
 ---
+NEEDS-BACKEND: Shipments pipeline query + stage mutations + document actions
+Screen / component: `src/app/(admin)/admin/shipments/page.tsx` + `src/features/admin/components/shipment-*` (DESIGN.md Section 8 Admin Screen M)
+Data needed: pipeline summary (vessels/units in transit, port/CFS units, avg transit duration, landed duty pending), shipment board and list rows (reference, vehicle, lot/vessel/carrier, origin, ETA, stage per DESIGN.md Section 7.2, delay flags, voyage progress) with search/origin/carrier/delayed filters and Board/List view, and per-shipment detail (stage timeline with dates and notes, documents with statuses, incurred & projected cost lines, total landed estimate). SAMPLE shapes live in `src/features/admin/mocks.ts` (`shipmentStats`, `shipmentFilterOptions`, `shipmentBoard`, `shipmentListRows`, `shipmentMilestones`, `shipmentDocuments`, `shipmentCosts`, `shipmentDetail`)
+Actions needed: `getShipmentPipeline(filters)`, `getShipment(id)`, `updateShipmentStage(stage, note)`, `markArrivedAndAddToStock(id)` (opens Add Vehicle prefilled), `uploadShipmentDocument`, `downloadShipmentDocument` (signed URL), `exportManifest` — audit-logged, role-gated (AGENTS.md Section 8)
+Permissions: owner, manager, sales (stock); cost lines shown in the drawer stay subject to the costing restriction in DESIGN.md Section 7.4
+Until ready: presentational over the labelled SAMPLE mock; one client entry leaf (`shipment-explorer`, wrapping `shipment-toolbar`, `shipment-board`, `shipment-list-table`) with TODO comments at the mutation boundaries
+
+NEEDS-BACKEND: Costing ledger + cost sheet + cost item mutations
+Screen / component: `src/app/(admin)/admin/costing/page.tsx` + `src/features/admin/components/costing-*` (DESIGN.md Section 8 Admin Screen L)
+Data needed: costing summary (total landed cost, projected portfolio profit, weighted avg margin, realized margin), ledger rows (vehicle, stock ref, sourcing origin, days in stock, landed cost, asking price, margin + yield band, status) with search/status/origin/yield-band filters, sort and pagination, and per-vehicle cost sheet (unit yield summary, FX lock, itemized cost lines per DESIGN.md Section 7.3 categories, audit lock state). SAMPLE shapes live in `src/features/admin/mocks.ts` (`costingStats`, `costingRows`, `costingSheet`, `costingLineItems`, `costingCategories`)
+Actions needed: `getCostingLedger(filters)`, `getCostSheet(vehicleId)`, `addCostLineItem(CostItem: category, note, amount KES, optional original amount + currency + exchange rate, incurred_on)`, `updateCostLineItem`, `deleteCostLineItem`, `lockCostSheet`, `exportCostAnalysis(CSV/PDF)` — audit-logged, role-gated (AGENTS.md Section 8)
+Permissions: owner, manager, accounts only; costing and profit invisible to sales and the public, enforced by RLS (DESIGN.md Section 7.4)
+Until ready: presentational over the labelled SAMPLE mock; three small client leaves (`costing-filters`, `costing-line-item-form`, `costing-audit-lock`) with TODO comments at the mutation boundaries
+
 
 NEEDS-BACKEND: Customer detail record + activity + preferences + data requests
 Screen / component: `src/app/(admin)/admin/customers/[id]/page.tsx` + `src/features/admin/components/customer-*` (DESIGN.md Section 8 Admin Screen J detail)
