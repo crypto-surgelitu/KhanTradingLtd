@@ -384,3 +384,155 @@ export const viewingsToolbarOptions = {
   range: "Nov 25 – Dec 01, 2024",
   timezone: "EAT (UTC+3)",
 } as const;
+
+// MOCK: Admin Customers directory sample rows — the export's demo CRM data
+// (SAMPLE, incl. contact details). Replace with the customers query contract.
+export const customersStats = [
+  { label: "Total Clients", icon: "users", value: "184", annotation: "+12 this mo.", annotationTone: "success", note: "Verified identities in Kenyan CRM registry" },
+  { label: "Active Deals Pipeline", icon: "handshake", value: "24", annotation: "Clients in closing stage", annotationTone: "muted", note: "Valued at approx. KSh 168.4M gross pipeline" },
+  { label: "VIP & Repeat Buyers", icon: "badge", value: "38", annotation: "21% retention index", annotationTone: "muted", note: "Accounts with ≥2 premium transactions" },
+  { label: "Sourcing & Enquiries", icon: "compass", value: "19", annotation: "Active UK/Japan orders", annotationTone: "muted", note: "Bespoke luxury specs currently under review" },
+] as const;
+
+export type CustomerRow = {
+  id: string;
+  initials: string;
+  name: string;
+  vip: boolean;
+  email: string;
+  phone: string;
+  sourceIcon: "globe" | "store" | "users" | "message" | "plane";
+  source: string;
+  activityDate: string;
+  activity: string;
+  deals: string;
+  dealsNote: string;
+  value: string;
+  tags: string[];
+};
+
+export const customerRows: CustomerRow[] = [
+  { id: "david-kamau", initials: "DK", name: "David Kamau", vip: true, email: "david.kamau@example.co.ke", phone: "+254 712 345 678", sourceIcon: "globe", source: "Website Reservation", activityDate: "Today, 11:00 AM", activity: "Dynamic Test Drive (#BK-2024-PRD-882)", deals: "1 Deal (#KH-2024-PRD)", dealsNote: "1 pending delivery", value: "KSh 7,650,000", tags: ["VIP Buyer", "Asset Finance (NCBA)"] },
+  { id: "peter-ochieng", initials: "PO", name: "Dr. Peter Ochieng", vip: false, email: "p.ochieng@consultant.co.ke", phone: "+254 722 984 112", sourceIcon: "store", source: "Showroom Walk-in", activityDate: "Yesterday, 03:30 PM", activity: "Sourcing Review (Land Cruiser 300 ZX)", deals: "1 Deal (#KH-2024-LC3)", dealsNote: "2 vehicles delivered", value: "KSh 34,200,000", tags: ["Repeat Client", "Cash Buyer", "VIP Buyer"] },
+  { id: "sarah-hassan", initials: "SH", name: "Sarah Hassan", vip: false, email: "s.hassan@premierlogistics.co.ke", phone: "+254 733 451 902", sourceIcon: "users", source: "Referral (Corporate)", activityDate: "Nov 27, 2024", activity: "KRA Clearance Docs Submitted", deals: "1 Deal (#KH-2024-GLE)", dealsNote: "1 pending (GLE 400d)", value: "KSh 12,800,000", tags: ["Corporate / Fleet", "Asset Finance"] },
+  { id: "wanjiku-nderitu", initials: "WN", name: "Wanjiku Nderitu", vip: true, email: "w.nderitu@advocates.ke", phone: "+254 720 119 443", sourceIcon: "globe", source: "Website Direct", activityDate: "Nov 26, 2024", activity: "Showroom Inspection (Lexus LX570)", deals: "1 Deal (#KH-2024-LX)", dealsNote: "1 pending trade appraisal", value: "KSh 16,700,000", tags: ["VIP Buyer", "Trade-In"] },
+  { id: "kevin-mutua", initials: "KM", name: "Capt. Kevin Mutua", vip: false, email: "k.mutua@aviation.co.ke", phone: "+254 715 882 301", sourceIcon: "message", source: "WhatsApp Concierge", activityDate: "Nov 25, 2024", activity: "10% Deposit Confirmed (RTGS)", deals: "1 Deal (#KH-2024-RRS)", dealsNote: "1 bought, 1 pending", value: "KSh 22,900,000", tags: ["Repeat Client", "VIP Buyer"] },
+  { id: "amina-abdi", initials: "AA", name: "Amina Abdi", vip: false, email: "amina.abdi@mediahouse.co.ke", phone: "+254 728 554 120", sourceIcon: "store", source: "Showroom Walk-in", activityDate: "Nov 24, 2024", activity: "Viewing Completed (Harrier Hybrid)", deals: "1 Deal (#KH-2024-HAR)", dealsNote: "1 pending financier sanction", value: "KSh 5,800,000", tags: ["Trade-In", "Asset Finance"] },
+  { id: "evans-mwangi", initials: "EM", name: "Evans Mwangi", vip: false, email: "evans.m@techforge.io", phone: "+254 701 443 890", sourceIcon: "plane", source: "Website Sourcing", activityDate: "Nov 22, 2024", activity: "Spec Sheet Confirmed (BMW X5 xDrive40i)", deals: "1 Deal (#KH-2024-X5)", dealsNote: "1 pending port dispatch", value: "KSh 8,200,000", tags: ["Direct Import", "Cash Buyer"] },
+  { id: "kennedy-gitau", initials: "KG", name: "Kennedy Gitau", vip: false, email: "k.gitau@agroexports.co.ke", phone: "+254 721 334 509", sourceIcon: "users", source: "Referral", activityDate: "Nov 20, 2024", activity: "Viewing Reschedule Requested", deals: "— None", dealsNote: "1 vehicle completed", value: "KSh 11,400,000", tags: ["Previous Buyer", "Commercial Fleet"] },
+  { id: "faith-chebet", initials: "FC", name: "Faith Chebet", vip: false, email: "faith.c@ventures.africa", phone: "+254 723 667 891", sourceIcon: "globe", source: "Website Direct", activityDate: "Nov 18, 2024", activity: "Sourcing Request Logged (Defender 110)", deals: "— Sourcing Active", dealsNote: "— Prospective", value: "Bespoke Sourcing", tags: ["SUV / 4WD"] },
+  { id: "omar-al-jabri", initials: "OA", name: "Omar Al-Jabri", vip: true, email: "omar@coastalhaulage.co.ke", phone: "+254 731 229 088", sourceIcon: "users", source: "Direct Referral", activityDate: "Nov 15, 2024", activity: "Corporate Account Onboarded", deals: "— None Active", dealsNote: "3 vehicles delivered", value: "KSh 45,000,000", tags: ["VIP Buyer", "Corporate / Fleet", "Repeat Client"] },
+];
+
+export const customersFilterOptions = {
+  sources: ["All Sources", "Website Direct", "Showroom Walk-in", "Referral", "WhatsApp Concierge", "Car Sourcing Request"],
+  dealStatuses: ["All Deal Statuses", "With Open Deal (24)", "No Active Deal"],
+  tags: ["All Tags", "VIP Buyer", "Repeat Client", "Corporate / Fleet", "Asset Finance", "Cash Buyer", "Direct Import"],
+  pageSizes: ["10 per page", "25 per page", "50 per page", "100 per page"],
+  summary: "Showing 1 to 10 of 184 entries",
+} as const;
+
+// MOCK: Admin Customer Detail sample profile — the export's demo record for
+// David Kamau (SAMPLE, incl. contact/KRA values). Replace with the customer
+// detail query contract (Kenya DPA handling applies to real data).
+export const customerDetailProfile = {
+  statusChip: "Active Profile (KRA & KYC Verified)",
+  lastEngagement: "Last engagement: Today at 11:00 AM",
+  initials: "DK",
+  name: "David Kamau",
+  tier: "VIP Client",
+  secondaryTag: "Repeat Buyer",
+  customerId: "CUST-2024-884",
+  phone: "+254 712 345 678",
+  email: "david.kamau@example.co.ke",
+  location: "Karen Plains, Nairobi",
+  kraPin: "A009842155Z",
+  stats: [
+    { label: "Lifetime Purchases", value: "2 Vehicles", note: "KSh 14,800,000 LTV" },
+    { label: "Active Deal", value: "1 Active", note: "2019 Prado TZ-G · KSh 7.65M" },
+    { label: "Relationship Age", value: "Client Since 2022", note: "Tier 1 Valued" },
+    { label: "Assigned Executive", value: "Alex Kariuki", note: "Dealership Manager" },
+  ],
+  tabs: [
+    { id: "overview", label: "Overview", caption: "" },
+    { id: "deals", label: "Deals", caption: "1 active, 2 completed" },
+    { id: "payments", label: "Payments", caption: "KSh 16.8M total" },
+    { id: "enquiries", label: "Enquiries & Viewings", caption: "4" },
+    { id: "documents", label: "Documents on File", caption: "6 verified" },
+    { id: "notes", label: "Notes", caption: "5 internal" },
+  ],
+} as const;
+
+export const customerDetailDeal = {
+  eyebrow: "In-Flight Transaction · #KH-2024-PRD-882",
+  chip: "TZ-G Top Spec",
+  title: "2019 Toyota Land Cruiser Prado TZ-G",
+  specs: "2.8L Turbo Diesel · Automatic 4WD · 44,500 km · Japan Grade 4.5A",
+  stage: "Stage 4 of 7: Payment or Financing",
+  deposit: "10% Deposit Paid (KSh 765,000)",
+  settlement: "RTGS Verified via Stanbic Bank Kenya · Ready for remaining balance disbursement",
+  concierge: "Alex Kariuki",
+  price: "KSh 7,650,000",
+  dealId: "kh-2024-prd-882",
+  image: "/images/admin-customer-detail/vehicle-land-cruiser-prado.webp",
+  imageAlt: "A pristine 2019 Toyota Land Cruiser Prado TZ-G in pearl white metallic paint, parked angled in a minimalist luxury architectural showroom setting with polished concrete floor and soft ambient natural lighting reflecting the refined SUV silhouette",
+} as const;
+
+export type CustomerTimelineEntry = {
+  id: string;
+  category: "Viewings" | "Deals" | "Payments" | "Comms" | "Documents";
+  title: string;
+  channel: string;
+  timestamp: string;
+  body: string;
+  note?: { label: string; text: string };
+};
+
+export const customerDetailTimeline: CustomerTimelineEntry[] = [
+  {
+    id: "viewing-tzg", category: "Viewings", title: "Viewing & Dynamic Test Drive Completed", channel: "Showroom & Bypass Route", timestamp: "Today, 11:00 AM",
+    body: "Conducted vehicle physical walkthrough and 18-minute Southern Bypass test drive on the 2019 Land Cruiser Prado TZ-G. Driven alongside Alex Kariuki.",
+    note: { label: "Concierge Note:", text: "\"Client loved the smooth active height control suspension and confirmed Japanese CarVX auction sheet is pristine. Indicated he will arrange RTGS balance settlement via Stanbic Bank tomorrow morning.\"" },
+  },
+  {
+    id: "payment-deposit", category: "Payments", title: "Payment Confirmed: KSh 765,000 Deposit", channel: "RTGS Verified", timestamp: "Yesterday, 03:45 PM",
+    body: "Bank confirmation received. Reference: STB-883921-KE. Cleared by Accounts Department (Grace Wanjiku). Deal stage automatically advanced to Payment / Financing.",
+  },
+  {
+    id: "reserved-portal", category: "Deals", title: "Vehicle Reserved via Online Portal", channel: "Web Portal", timestamp: "Nov 28, 2024, 02:15 PM",
+    body: "Client placed a 48-hour priority lock on stock unit 2019 Toyota Land Cruiser Prado TZ-G (KDH-442T) directly via the public showroom catalog.",
+  },
+  {
+    id: "whatsapp-inquiry", category: "Comms", title: "WhatsApp Inquiry Sent", channel: "Concierge Chat", timestamp: "Nov 25, 2024, 10:30 AM",
+    body: "Inquired regarding arrival dates of TZ-G Prado and spec sheets for Land Cruiser 300 ZX series via WhatsApp hotline. Spec brochures dispatched.",
+  },
+  {
+    id: "purchase-e250", category: "Deals", title: "Purchase Completed: 2018 Mercedes-Benz E250 AMG", channel: "Deal Settled", timestamp: "Oct 14, 2023, 04:00 PM",
+    body: "Total transaction settled: KSh 5,200,000. Ownership transfer finalized through NTSA TIMS and original logbook delivered to Karen residence.",
+  },
+  {
+    id: "onboarding", category: "Documents", title: "First Showroom Walk-in & Account Onboarded", channel: "Onboarding", timestamp: "Aug 12, 2022, 11:00 AM",
+    body: "Referred by existing client Dr. Peter Ochieng. Initial inquiry for executive saloons. KYC and KRA documents filed and catalog access granted.",
+  },
+];
+
+export const customerDetailPreferences = {
+  channels: [
+    { id: "pref-whatsapp", label: "WhatsApp Updates", icon: "chat", defaultChecked: true },
+    { id: "pref-sms", label: "SMS Alerts", icon: "sms", defaultChecked: true },
+    { id: "pref-email", label: "Email Summaries", icon: "email", defaultChecked: true },
+    { id: "pref-marketing", label: "Marketing & New Stock", icon: "campaign", defaultChecked: false },
+  ],
+  interests: [
+    { label: "Preferred Makes:", value: "Toyota, Lexus, Mercedes-Benz" },
+    { label: "Preferred Body Types:", value: "SUV / 4WD, Executive Sedan" },
+    { label: "Budget Sweet Spot:", value: "KSh 6,000,000 – 12,000,000" },
+    { label: "Transmission:", value: "Automatic Only" },
+    { label: "Sourcing Preference:", value: "Local Stock & Japan 4.5+" },
+  ],
+  executive: { initials: "AK", name: "Alex Kariuki", role: "Dedicated Dealership Manager" },
+} as const;
+
+export const customerDetailDpa = {
+  consentDate: "Nov 28, 2024",
+} as const;

@@ -4,6 +4,20 @@ Handoffs between agents follow AGENTS.md Section 11 formats. Newest entries firs
 
 ---
 
+NEEDS-BACKEND: Customer detail record + activity + preferences + data requests
+Screen / component: `src/app/(admin)/admin/customers/[id]/page.tsx` + `src/features/admin/components/customer-*` (DESIGN.md Section 8 Admin Screen J detail)
+Data needed: customer profile (identity, contact, KRA verification state, stats, tab counts), in-flight deal card, chronological activity timeline with categories, preferences (notification channels, vehicle interests), assigned executive, DPA consent date. SAMPLE shapes live in `src/features/admin/mocks.ts` (`customerDetailProfile`, `customerDetailDeal`, `customerDetailTimeline`, `customerDetailPreferences`, `customerDetailDpa`)
+Actions needed: `getCustomerDetail(id)`, `postCustomerActivity(...)`, `updateCustomerPreferences(...)`, `reassignExecutive(...)`, and the Kenya DPA 2019 data-subject actions (`exportCustomerData`, `logDataSubjectRequest`, `requestCustomerDeletion`) — audit-logged, role-gated, no personal data in logs (AGENTS.md Section 8); the tab panels for Deals/Payments/Enquiries/Documents/Notes currently render empty states and need their data sections
+Permissions: owner, manager, sales (accounts read-only)
+Until ready: presentational detail over the labelled SAMPLE mock; two small client leaves (`customer-tabs`, `customer-actions`) with TODO comments; Call/WhatsApp/mailto actions use `siteConfig` placeholders
+
+NEEDS-BACKEND: Customers directory query + CRUD + data requests
+Screen / component: `src/app/(admin)/admin/customers/page.tsx` + `src/features/admin/components/{customers-toolbar,customers-table}` (DESIGN.md Section 8 Admin Screen J list)
+Data needed: paginated customer rows (identity, contact, attribution source, latest activity, open deals, lifetime value, tags) + summary stats; SAMPLE shapes live in `src/features/admin/mocks.ts` (`customersStats`, `customerRows`, `customersFilterOptions`). Customer detail screen (tabs, activity timeline, preferences, data requests) comes with the detail route
+Actions needed: `createCustomer(input)`, `updateCustomer(id, input)`, `exportCustomersCsv(filters)`, and per Kenya Data Protection Act 2019 the export/delete data-request actions (audit-logged, role-gated per AGENTS.md Section 8)
+Permissions: owner, manager, sales (accounts read-only); costing fields excluded for sales (DESIGN.md Section 7.4)
+Until ready: presentational directory over the labelled SAMPLE mock; search/filters/pagination are native controls with a TODO comment; row Call/WhatsApp actions use `siteConfig` placeholders
+
 NEEDS-BACKEND: Viewings calendar query + booking actions
 Screen / component: `src/app/(admin)/admin/viewings/page.tsx` + `src/features/admin/components/{viewings-toolbar,viewings-calendar,viewings-drawer}` (DESIGN.md Section 8 Admin Screen I)
 Data needed: bookings for a date range (id, day/hour placement, time label, type, status, vehicle, client, assigned concierge), availability settings (opening hours, slot length, blocked dates), booking detail (reminder state, client particulars, notes, allocated inventory, route, audit trail). SAMPLE shapes live in `src/features/admin/mocks.ts` (`viewingsStats`, `viewingsDays`, `viewingsHours`, `viewingsEvents`, `viewingsLegend`, `viewingsDetail`, `viewingsToolbarOptions`)

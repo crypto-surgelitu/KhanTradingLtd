@@ -1,0 +1,19 @@
+{
+  "name": "projects/2730876000992488484/screens/a90dc9720d664260b6e4c386348fc8c5",
+  "title": "Admin Customers — KHANS TRADING Ltd (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "3936",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/files/a90dc9720d664260b6e4c386348fc8c5",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/a90dc9720d664260b6e4c386348fc8c5:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/files/screenshot_0006612d24a47399023bd9b9a908d748",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/screenshot_0006612d24a47399023bd9b9a908d748:download",
+    "mimeType": "image/png"
+  },
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen a90dc9720d664260b6e4c386348fc8c5. Full text content and image URLs extracted from the htmlCode file via the Stitch MCP download_file tool. The export contains only the sidebar logo mark (served from public/brand/logo-white.png) — no photo assets, so no public/images/admin-customers/ downloads were needed. Note: the export's top bar shows the Viewings screen's title and '+ Add Booking' (a Stitch artifact); the build uses the admin-shell default 'Add vehicle' action per the DESIGN.md Section 8 shell spec and a 'Customers Directory' page title."
+}
