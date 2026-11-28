@@ -1,0 +1,69 @@
+{
+  "name": "projects/2730876000992488484/screens/a4fc8efe484c4b68b1948416272469ea",
+  "title": "Saved Vehicles — KHANS TRADING Ltd (Desktop)",
+  "screenType": "DESIGN",
+  "deviceType": "DESKTOP",
+  "width": "2560",
+  "height": "5898",
+  "htmlCode": {
+    "name": "projects/2730876000992488484/screens/a4fc8efe484c4b68b1948416272469ea/fileEntries/html",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/a4fc8efe484c4b68b1948416272469ea:download",
+    "mimeType": "text/html"
+  },
+  "screenshot": {
+    "name": "projects/2730876000992488484/screens/a4fc8efe484c4b68b1948416272469ea/fileEntries/screenshot",
+    "downloadUrl": "https://stitch.googleapis.com/v1/projects/2730876000992488484/files/screenshot_0006612d6a0a3e870356cb517c14c08b:download",
+    "mimeType": "image/png"
+  },
+  "images": [
+    {
+      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuB4DqQyDE59JMU2DMBWg05h-msGQj1XZe_j32P2FNC7VCbJI0vCg3fd_jTwj_qZa7TspwZZTFLGYfFpuehDf_qiB839CnD2oflcU3x48P3s4ChFhMDqYcJK3_gcJnHiKqdJuCyMs6aW-WNP6_vpxk-ajLbf9wmbWOFSP8SfCG689w88LWDgs7xgy9T4lteZ_Er8R0jjIkoRhCtUZnr60gztzdjoLlYR0HMcpb2vdYeKwpJ5o3YZzDsm",
+      "role": "header logo (not downloaded; served from public/brand/ per AGENTS.md Section 6)"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuC6zd7vA7I39U3F_YRm80tZXW2ux6pgJoWJtbcIBDMpWj9mrrvV_YlyggPUAMhF3HDvdRGCFYTKWDv6r9siG8chYzMo9yz-eET3pi_ytmcLgCNB9447Xwp1CxVxCvXMff85h4_PttqW7puD_HiHy0iK4GUo8vDocykQ5vSEJxdvyfuNyHXXZPDHO3DAo1xtqmYsIC7TBWRBytyYezVCZATePY3aPmNbqbY_X1SF4ZE",
+      "role": "card 1 photo - 2019 Toyota Land Cruiser Prado TZ-G",
+      "local": "/images/saved-vehicles/vehicle-1.webp"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCnlUKOD4simnIpRcrX4nEMjgX8RRNzc2Lqtak3Lvo8MeXus5HfI22bGhEW5iRCfJOVbEK3gls4qMXOuq6hIXS-sYYmjmDjvxwGrrDxzde9hWJedyQyoRyi8lRGWJrB32wDoeCaIvyMczu-yc54zrvRBrVyrOeleH_hBK0IIJzvJ44TxyBk6vB6m8Hqpibm8ABrseMItoZKmFBqYXMS5brpnFZyPmJVAFvWb53Fje0",
+      "role": "card 2 photo - 2021 Toyota Land Cruiser 300 ZX",
+      "local": "/images/saved-vehicles/vehicle-2.webp"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuC7RwmLuwXFebMg4KidaHtFF5g9EtkZ3TBVUBS6VXbVCcnDdSPuMGC-VFW7uvg3X6VdVvIY90fGmTSMYQSK5MUFzu_cwSH3bMJfg27alJEzkpDF9i9Do49eIAA0WCOJv2jh0QIOS-SmoM0dwigMRAuMwcBxq6PyoXStxtiX8-owFg535vRvL4DSlRIoXxD1iI3w6jTvZb1n5lTSGhYHt_QfkEx1T-eOc0rUhd5zXL8",
+      "role": "card 3 photo - 2020 Mercedes-Benz GLE 300d",
+      "local": "/images/saved-vehicles/vehicle-3.webp"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAOyotxGiVlT5B8eJANO3JRcQGMoI7u1fyxfgqHgmhBk3LeksAUo8_qc1Ht1zs7Ok_7PXK5Vb7mDC-W0Ij5CfBjMSOsKkIytKbM4zYwZdksFGjZUwrxsiXt3XENAVwuKBYkkna9Wkif7s0d-rHW4EpUriM9vG9yQP3S0gRdJWfmC5GWsTxkK04rBa0FQBZmOg3kMD4ruZcrhdECSWd6Y69OhlhrZeekRftbkk-Vlw4",
+      "role": "card 4 photo - 2020 Lexus LX570 V8",
+      "local": "/images/saved-vehicles/vehicle-4.webp"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCz8BppegKTkr_LECkcnAiqPmTmGWrTuy0dsk208Zq4yfxb7OqsTITrbIstFXvY5CxGAWulmraBXlNpMCSZ-JEAcaZjRiJXa6c919M8qPFZceaFJ2x7mwo9kjNa6JmUptqcX89ZLWS3TvsbR-j8gdLHJNEtzEhdWe2iStuGruKINe4Ktl7l-YXhgWehAt-29vYBR7lqBqzt7FXUn_kU0euba_PjQ5yFrtQj0GyyiPE",
+      "role": "card 5 photo - 2021 Toyota Harrier G Leather",
+      "local": "/images/saved-vehicles/vehicle-5.webp"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuBhyUYcGeAKvzDIoQlr30QjM4J_JyGxMLs6nZnjKql5_DVlF-C23rTnCu0uMqZ7czqXnSBLC20dehj41tqbP90O5uvzWL2WTQKRztsBuxt4sE1gsQuFlOR8YlynyQLNxBMzylcdZkANIg-EU4z2cq1tSSNvD2WTh9i3LtvQ7_6bwEYTUskMlFoJ8qqTolZH5qnW4Ubf1bziEcP9jYhAPRx1sK0JGH8gKIv7ixBE1OA",
+      "role": "card 6 photo - 2018 Porsche Cayenne Turbo",
+      "local": "/images/saved-vehicles/vehicle-6.webp"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAidDwABet1GtGFeegviC6n_crv6fx--wbvopx0LXvCoGZFCY3gejTVJRvFlMMj5Wa5LpH_db9FJV8HkbjG-aB-ZISiqFORPv4jyvem9fwYTIYfKWvsauO4iADc6kUXuf_iWxPI25MaFNO59s2vC64SxTV8F_U1MXXNHEsx4Ed2z0HEr-bqWygBnN4q8doxZpZ_RsIWNZF_RmIxdc7ccMvqi1wCMyEbwU8p9V8_jbA",
+      "role": "compare dock thumbnail 1 - Prado TZ-G close-up",
+      "local": "/images/saved-vehicles/thumb-1.webp"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/aida-public/AB6AXuA5ARiFBVlI0hjd5fy2IY0JMdTjA1afpUmBpv7-uR-ve_KHnzfRbqHreaHHNCw_Mdyix9EVGjmMxoFe9m0Caav_7swt5AyBzyr3bgP1_OvlAEzp3-E_lsfSA8wHCnhHwLY7jVbBcKAX1G8G9DBt2YC8cHlo5hvpdVbA3-NMrPeSHZFO1-fyd_6rbZDO5ZyaX6zsOvwu6tmHIFNjgoo6LMecQREj-DH2FZNPEvhBOMc",
+      "role": "compare dock thumbnail 2 - Land Cruiser 300 ZX close-up",
+      "local": "/images/saved-vehicles/thumb-2.webp"
+    },
+    {
+      "url": "https://lh3.googleusercontent.com/aida/ALJJyrCWOuut0PB--NcUrG6A0zbyq2dVRGTp-7uWVQXSbePuAArGrGvIRj_INLAb7zsgzW5ghmaEvbB_djfbnj8785LWrT8vSIf3WI3CTPMX-q247abBLzqpRrad_90pzyYbiiOkfK3EU06Ou7vSJBzs81hzEp4_yKfg3b9kXBSlN2JS30ECWKrOQa635kO4of_6CuO5Z8DRLEhkLTgzXmR9LxvZA1CFg2sjfphVt_2jdfafHOaBq_78GeeZtSM",
+      "role": "footer logo (not downloaded; served from public/brand/ per AGENTS.md Section 6)"
+    }
+  ],
+  "_provenance": "Fetched 2026-11-28 via the Stitch MCP get_screen tool (tools.stitch.get_screen), Project 2730876000992488484, Screen a4fc8efe484c4b68b1948416272469ea. Full text content and image URLs extracted from the htmlCode file via the Stitch MCP download_file tool. Eight vehicle images (6 card photos at 4:3, 2 compare-dock thumbnails at 1:1) downloaded and converted to WebP in public/images/saved-vehicles/ via one sharp script (sharp installed only inside temp_images/; package.json and lockfile untouched; temp_images/ removed after the run). Header and footer logo assets are served from public/brand/ instead of the export's logo bitmaps. The screen is the Saved Vehicles public screen (DESIGN.md Section 6, Screen 7): breadcrumb, editorial header with saved count, select-all / filter / sort toolbar, a 3x2 saved-vehicle card grid with per-card remove and compare affordances, a sticky comparison dock (2 of 3 selected), and the design's empty-state preview block. All vehicle data is the export's clearly-labelled SAMPLE content and lives in src/features/saved-vehicles/mocks.ts."
+}

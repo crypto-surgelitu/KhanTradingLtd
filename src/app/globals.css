@@ -41,3 +41,11 @@
     }
   }
 }
+
+/* Compare screen (DESIGN.md Section 6, Screen 8): when the "Highlight
+   differences only" switch is on, spec rows whose values differ across the
+   compared vehicles are highlighted in champagne-tint. The switch state is
+   exposed by compare-controls.tsx as data-diff-highlight on the wrapper. */
+[data-diff-highlight="on"] tr[data-diff="true"] > * {
+  background-color: var(--champagne-tint);
+}

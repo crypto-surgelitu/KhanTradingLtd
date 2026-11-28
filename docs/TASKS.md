@@ -3,6 +3,21 @@
 Handoffs between agents follow AGENTS.md Section 11 formats. Newest entries first.
 
 ---
+
+NEEDS-BACKEND: Comparison selection + vehicle spec query
+Screen / component: `src/app/(public)/compare/page.tsx` + `src/features/compare/components/compare-controls.tsx` (DESIGN.md Section 6 Screen 8)
+Data needed: the visitor's comparison selection (max 3 vehicles, order preserved), the per-vehicle comparison payload (card fields plus the 16 spec values in the 3 groups per `CompareSpecGroup` in `src/features/compare/mocks.ts`), and recommended suggestions
+Actions needed: `getComparison(vehicleIds)`, `addToComparison(vehicleId)` (cap of 3 enforced server-side), `removeFromComparison(vehicleId)`, `clearComparison()`, `getCompareSuggestions(vehicleIds)` — Zod-validated per AGENTS.md Section 7
+Permissions: public (per-visitor selection until accounts exist); reads follow the published-vehicles visibility rules
+Until ready: presentational over the labelled SAMPLE mock; client leaves in `compare-controls.tsx` (`CompareControls`, `CompareRemoveButton`, `CompareAddSlot`) hold local UI state / browser APIs only with TODO comments at the wiring boundaries
+
+NEEDS-BACKEND: Saved vehicles list query + saved/compare mutations
+Screen / component: `src/app/(public)/saved-vehicles/page.tsx` + `src/features/saved-vehicles/components/*` (DESIGN.md Section 6 Screen 7)
+Data needed: the saved-vehicle list for the current visitor (card fields per `SavedVehicle` in `src/features/saved-vehicles/mocks.ts`, plus saved-at date for the "Recently Saved" sort), saved count for the header badge, and the sort option set (export defines only "Recently Saved")
+Actions needed: `getSavedVehicles(filters, sort)`, `saveVehicle(vehicleId)`, `removeSavedVehicle(vehicleId)`, `clearSavedVehicles()`, and a compare selection capped at 3 (`getCompareSelection()`) — validated with Zod, role-aware per AGENTS.md Section 8
+Permissions: public (per-visitor list until accounts exist); the compare cap of 3 is enforced server-side
+Until ready: presentational over the labelled SAMPLE mock in `src/features/saved-vehicles/mocks.ts`; client leaves (`remove-saved-button`, `clear-saved-button`, `share-shortlist-button`, `saved-select-all`, `saved-sort-menu`, `compare-toggle`, `compare-clear-button`, `saved-empty-cta`) keep local UI state with TODO comments at the wiring boundaries
+
 NEEDS-BACKEND: Shipments pipeline query + stage mutations + document actions
 Screen / component: `src/app/(admin)/admin/shipments/page.tsx` + `src/features/admin/components/shipment-*` (DESIGN.md Section 8 Admin Screen M)
 Data needed: pipeline summary (vessels/units in transit, port/CFS units, avg transit duration, landed duty pending), shipment board and list rows (reference, vehicle, lot/vessel/carrier, origin, ETA, stage per DESIGN.md Section 7.2, delay flags, voyage progress) with search/origin/carrier/delayed filters and Board/List view, and per-shipment detail (stage timeline with dates and notes, documents with statuses, incurred & projected cost lines, total landed estimate). SAMPLE shapes live in `src/features/admin/mocks.ts` (`shipmentStats`, `shipmentFilterOptions`, `shipmentBoard`, `shipmentListRows`, `shipmentMilestones`, `shipmentDocuments`, `shipmentCosts`, `shipmentDetail`)
